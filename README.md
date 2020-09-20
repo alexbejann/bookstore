@@ -49,7 +49,7 @@ You are not supposed to alter the provided HTML and CSS.
 - Use the browsers XMLHttpRequest API to make HTTP to the backend
 
 ## Grading
-This assignment has to be handed in on Blackboard. Handing it in at the end of week five will allow the teachers to provide feedback. The ultimate deadline is
+This assignment has to be handed in on Blackboard. The ultimate deadline is
 
 **monday 09:00 in week 9.**
 
