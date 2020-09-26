@@ -1,0 +1,488 @@
+GET http://localhost:3000/auth
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDA3ODc0Mzh9.OwU-OGI-Z9pzEWjecylZ01b7Cyd3zhRG-Sdo2TW8PQI
+
+<> 2020-09-22T061042.200.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-09-22T061038.200.json
+
+###
+
+GET http://localhost:3000/auth
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDA3ODYwNzN9.brg2Ud0QRloygb6_Y_HWA0ltQDr6-_5fwjIglpkVbT4
+
+<> 2020-09-22T054757.200.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-09-22T054753.200.json
+
+###
+
+GET http://localhost:3000/auth
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDA3ODYwNDR9.HMyTwEsxJ95FaNlpFA24cd_NVjsrVDs9DPKhZ2hbNvg
+
+<> 2020-09-22T054728.500.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-09-22T054724.200.json
+
+###
+
+GET http://localhost:3000/auth
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDA3ODYwMDN9.Cf1vgRVjcGTr8QHd1_cRTcR9S_D4F4aibGDjTn-lRQk
+
+<> 2020-09-22T054649.500.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-09-22T054643.200.json
+
+###
+
+GET http://localhost:3000/auth
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDA3ODU0NjZ9.FpClGJMXd_OZxf_FQe3SVNYEwr2OabfwXxLuRR-y_6M
+
+<> 2020-09-22T054636.500.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-09-22T053746.200.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-09-22T042258.200.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-09-22T042244.200.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-09-22T041851.200.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-09-22T035803.200.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-09-22T035726.200.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-09-22T035530.200.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-09-22T035506.200.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-09-22T035254.200.json
+
+###
+
+POST http://localhost:3000/books/1/bids
+Content-Type: application/json
+
+{
+    "username": "Jason",
+    "amount": "5"
+}
+
+<> 2020-09-22T032634.201.json
+
+###
+
+GET http://localhost:3000/books/?year=1979
+Accept: application/json
+
+<> 2020-09-22T030858.200.json
+
+###
+
+DELETE http://localhost:3000/books/1/bids?id=3
+Accept: application/json
+
+<> 2020-09-15T053710.200.json
+
+###
+
+DELETE http://localhost:3000/books/1/bids?id=3
+Accept: application/json
+
+<> 2020-09-15T053608.200.json
+
+###
+
+DELETE http://localhost:3000/books/1/bids?id=3
+Accept: application/json
+
+<> 2020-09-15T053304.201.json
+
+###
+
+DELETE http://localhost:3000/books/1/bids?id=3
+Accept: application/json
+
+<> 2020-09-15T052911.201.json
+
+###
+
+POST http://localhost:3000/books/1/bids
+Content-Type: application/json
+
+{
+    "username": "Jason",
+    "amount": "5"
+}
+
+<> 2020-09-15T051749.201.json
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "username": "Nick",
+    "password": "pistol"
+}
+
+<> 2020-09-15T051730.201.json
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-09-15T051726.400.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "Nick",
+  "password": "pass123"
+}
+
+<> 2020-09-15T051721.404.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-09-15T051716.200.json
+
+###
+
+POST http://localhost:3000/books/1/bids
+Content-Type: application/x-www-form-urlencoded
+
+{
+    "username": "Jason",
+    "amount": "5"
+}
+
+<> 2020-09-15T051523.201.json
+
+###
+
+GET http://localhost:3000/books/?author=Hans Christian Andersen
+Accept: application/json
+
+<> 2020-09-15T050954.200.json
+
+###
+
+GET http://localhost:3000/books/?author=HansChristianAndersen
+Accept: application/json
+
+<> 2020-09-15T050903.200.json
+
+###
+
+GET http://localhost:3000/books/?author=HansChristianAndersen
+Accept: application/json
+
+<> 2020-09-15T050834.200.json
+
+###
+
+GET http://localhost:3000/books/?author=Hans Christian Andersen
+Accept: application/json
+
+<> 2020-09-15T050659.200.json
+
+###
+
+GET http://localhost:3000/books/?author=HansChristianAndersen
+Accept: application/json
+
+<> 2020-09-15T050636.200.json
+
+###
+
+GET http://localhost:3000/books/?author=HansChristianAndersen
+Accept: application/json
+
+<> 2020-09-15T050606.200.json
+
+###
+
+GET http://localhost:3000/books/?author=Daniel
+Accept: application/json
+
+<> 2020-09-15T050521.200.json
+
+###
+
+GET http://localhost:3000/books/?year=1979
+Accept: application/json
+
+<> 2020-09-15T050438.200.json
+
+###
+
+GET http://localhost:3000/books
+Accept: application/json
+
+<> 2020-09-15T050429.200.json
+
+###
+
