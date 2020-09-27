@@ -5,6 +5,15 @@ const router = Router();
 const books = require('../data/books');
 
 // Return all books
+router.get('/books', (req, res, next) => {
+    try {
+       res.status(200).send(books.books);
+    } catch (error) {
+        next(error);
+    }
+});
+
+// Retrieve books with parameters
 router.get('/', (req, res, next) => {
   try {
     let country = req.query.country;
@@ -97,7 +106,7 @@ router.post('/:id/bids', (req,res) => {
     }
 })
 
-// Delete bid to a book
+// Delete bid to a book todo check if loggedin use has that specific bid
 router.delete('/:id/bids', (req,res) => {
     let book =  (books.books).find(book => book.id === req.params.id);
     let bid_ID  = req.query.id;

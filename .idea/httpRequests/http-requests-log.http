@@ -1,3 +1,15 @@
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-09-26T023527.200.json
+
+###
+
 GET http://localhost:3000/auth
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDA3ODc0Mzh9.OwU-OGI-Z9pzEWjecylZ01b7Cyd3zhRG-Sdo2TW8PQI
@@ -476,13 +488,6 @@ GET http://localhost:3000/books/?year=1979
 Accept: application/json
 
 <> 2020-09-15T050438.200.json
-
-###
-
-GET http://localhost:3000/books
-Accept: application/json
-
-<> 2020-09-15T050429.200.json
 
 ###
 

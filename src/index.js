@@ -7,8 +7,14 @@ const middlewares = require('./middlewares');
 const books = require('./api/books');
 const user = require('./api/user');
 
+// Use the static folder
+app.use(express.static(__dirname+'/static'));
+
+// use helmet to protect header
 app.use(helmet());
+// Use morgan for common logs
 app.use(morgan('common'));
+
 app.use(express.json());
 
 app.get("/", (req, res) =>{
@@ -17,11 +23,7 @@ app.get("/", (req, res) =>{
     })
 })
 
-app.use('/books', books);
-
-//app.use('/books', books);
-
-// app.use('/books/id/bids', books);
+app.use('/books', books); // Process books router
 
 app.use('/', user); // Processes multiple requests 
 

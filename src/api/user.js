@@ -12,8 +12,9 @@ const fs = require('fs');
 
 const login = (username, password)=>{
 
+    console.log("breaks here in login");
     const currentUser = users.users.find(user => user.username === username);
-
+    //Check password
     if (bcrypt.compareSync(password, currentUser.password))
     {
         return jwt.sign({
@@ -61,9 +62,12 @@ router.post('/users', (req, res, next) => {
   try {
     let username = req.body.username;
 
-    const password = encryptedPassword(req.body.password);
+    const password = encryptedPassword(req.body.password || '');
 
-    const element = users.users.find(user => user.username === username );
+    const email = req.body.email || '';
+
+    const element = users.users.find(user => user.username === username
+                                          && user.email === email);
 
 
      if (!element)
@@ -72,6 +76,7 @@ router.post('/users', (req, res, next) => {
              "id": uuidv4(),
              "username": `${username}`,
              "password": `${password}`,
+             "email": `${email}`,
              "secret": uuidv4(),
              "roles":[]
          })
@@ -110,7 +115,7 @@ router.get('/auth', (req, res) =>{
         }
         else
         {
-            res.status(404);
+            res.status(401).send({ message: 'Unauthorized' });
         }
     }
     else

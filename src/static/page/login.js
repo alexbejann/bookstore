@@ -1,5 +1,5 @@
 // import utilities from util.js
-import { sendJSON, saveToken, validateInputControl } from './util.js'
+import { sendJSON, saveToken, validateInputControl, loadNavigation } from './util.js'
 
 // grab form controls from the DOM
 const
@@ -13,17 +13,18 @@ loginButton.addEventListener('click', event => {
     // do not submit form (the default action of a submit button)
     event.preventDefault()
     // construct request body with username and password
-    const body = { user: usernameField.value, password: passwordField.value }
+    const body = { username: usernameField.value, password: passwordField.value }
     // send PUT request with body to /credentials and wait for HTTP response
-    sendJSON({ method: 'PUT', url: '/credentials', body }, (err, response) => {
+    sendJSON({ method: 'POST', url: '/auth', body }, (err, response) => {
         // if err is undefined, the send operation was a success
         if (!err) {
             // store token from response body if login is a success
-            saveToken(response.token)
-            // TODO navigate to home page after successful login
+            saveToken(response.token);
+            //redirect user to home page
+            window.location.replace('./index.html');
         } else {
-            // TODO report error message in user-interface
-            console.error(err)
+            alert(err)
+            console.error(response);
         }
     })
 })
@@ -47,3 +48,10 @@ form.addEventListener('input', validateForm)
 
 // validate form on page load
 validateForm()
+
+// on page load show the right items on page
+window.onload = (event) =>{
+
+    loadNavigation();
+
+};
