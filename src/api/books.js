@@ -55,10 +55,9 @@ router.get('/:id', (req,res) => {
     let book =  (books.books).find(book => book.id === req.params.id);
     if (book != null)
     {
-        res.json({
+        res.status(200).json({
             book : book,
         });
-        res.status(200);
     } else {
         res.json({
             Error: "Book doesn't exists",
