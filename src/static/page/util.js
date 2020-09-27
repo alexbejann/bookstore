@@ -20,7 +20,7 @@ export function sendJSON({ method, url, body }, callback) {
 }
 
 export function saveToken(token) {
-    //TODO save token in a cookie not in localstorage so you avoid CSRF and XSS attacks
+    // save token in a cookie not in localstorage so you avoid CSRF and XSS attacks
     createCookie(token);
 }
 
@@ -67,24 +67,11 @@ export function newElement(tagName, textContext, className, name, id)
     return nTag;
 }
 
-// create book for index.html
-export function createBook(book)
-{
-    const nTag = newElement('section', '', 'auction_box', '');
-    const bookTitle = nTag.appendChild(newElement('a', `${book.title}`, 'auction_title', '',`${book.id}`));
-    bookTitle.href = 'auction.html';
-    nTag.appendChild(newElement('p', `Author: ${book.author}`, 'auction_description'));
-    nTag.appendChild(newElement('p', `Year: ${book.year}`, 'auction_description'));
-    const bidsContainer = nTag.appendChild(newElement('div', '','auction_bid',''));
-    bidsContainer.appendChild(newElement('span', `${book.price}`, 'auction_bid_price',''));
-    bidsContainer.appendChild(newElement('span',`${book.time}`,'auction_bid_time',''));
-    return nTag;
-}
-
 // check of cookie exists
 export function sessionCookie()
 {
     let end;
+    // get cookies
     let dc = document.cookie;
     let prefix = "token=";
     let begin = dc.indexOf("; " + prefix);
@@ -122,7 +109,7 @@ export function hideElement(element)
     }
 }
 
-// load NAV bar
+// load NAV bar todo this should be replaced with a better approach
 export function loadNavigation()
 {
     // if cookie exists hide login button

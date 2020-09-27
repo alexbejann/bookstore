@@ -1,5 +1,5 @@
 // import utilities from util.js
-import { sendJSON, logout, createBook, sessionCookie, hideElement, loadNavigation } from './util.js'
+import { sendJSON, logout, loadNavigation, newElement } from './util.js';
 
 // grab form controls from the DOM
 const
@@ -29,6 +29,24 @@ window.onload = (event) =>{
         }
     })
 };
+
+
+// create book for index.html
+function createBook(book)
+{
+    const nTag = newElement('section', '', 'auction_box', '');
+    const bookTitle = nTag.appendChild(newElement('a', `${book.title}`, 'auction_title', '',`${book.id}`));
+    bookTitle.href = 'auction.html';
+    bookTitle.addEventListener('click', event =>{
+        localStorage.setItem('bookID',event.currentTarget.id)
+    })
+    nTag.appendChild(newElement('p', `Author: ${book.author}`, 'auction_description'));
+    nTag.appendChild(newElement('p', `Year: ${book.year}`, 'auction_description'));
+    const bidsContainer = nTag.appendChild(newElement('div', '','auction_bid',''));
+    bidsContainer.appendChild(newElement('span', `${book.price}`, 'auction_bid_price',''));
+    bidsContainer.appendChild(newElement('span',`${book.time}`,'auction_bid_time',''));
+    return nTag;
+}
 
 // logout
 logoutButton.addEventListener('click', (event) =>{
