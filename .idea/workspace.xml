@@ -20,13 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67c5b057-5df1-48d4-979b-19248c488fab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-15T050438.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/books.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/auction.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/auction.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/page/auction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/auction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/page/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/administration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/administration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/bids.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/bids.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/page/administration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/administration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/page/bids.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/bids.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/static/page/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/util.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -738,7 +736,7 @@
       <workItem from="1600793826774" duration="27000" />
       <workItem from="1600795528823" duration="610000" />
       <workItem from="1601113835153" duration="694000" />
-      <workItem from="1601117825094" duration="44581000" />
+      <workItem from="1601117825094" duration="45809000" />
     </task>
     <task id="LOCAL-00001" summary="Added nodemon mac compat">
       <created>1599571031310</created>
@@ -775,7 +773,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601198989525</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fixed auction.html">
+      <created>1601211125743</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1601211125743</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -799,7 +804,8 @@
     <MESSAGE value="Implemented other routers" />
     <MESSAGE value="Finished tokens and encryption" />
     <MESSAGE value="Linked front-end with backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Linked front-end with backend" />
+    <MESSAGE value="Fixed auction.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed auction.html" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600774801079">
@@ -810,10 +816,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="83" key="#dev/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1600774824256" />
-    <state x="312" y="0" key="CommitChangelistDialog2" timestamp="1601198988094">
+    <state x="312" y="0" key="CommitChangelistDialog2" timestamp="1601211124828">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="312" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601198988094" />
+    <state x="312" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601211124828" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1601117834508">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -843,10 +849,10 @@
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1600174433897" />
     <state x="2266" y="72" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600612983673" />
-    <state x="402" y="186" key="Vcs.Push.Dialog.v2" timestamp="1601198993471">
+    <state x="402" y="186" key="Vcs.Push.Dialog.v2" timestamp="1601211127521">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="402" y="186" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601198993471" />
+    <state x="402" y="186" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601211127520" />
     <state x="440" y="237" key="Vcs.Push.Dialog.v2/0.23.1680.949@0.23.1680.949" timestamp="1599571047543" />
     <state x="532" y="293" key="git4idea.merge.GitPullDialog" timestamp="1599571038668">
       <screen x="0" y="23" width="1680" height="949" />

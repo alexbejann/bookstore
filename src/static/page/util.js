@@ -20,7 +20,7 @@ export function sendJSON({ method, url, body }, callback) {
 }
 
 export function saveToken(token) {
-    //TODO save token in a cookie not in localstorage so you avoid CSRF and XSS attacks
+    // save token in a cookie not in localstorage so you avoid CSRF and XSS attacks
     createCookie(token);
 }
 
@@ -67,12 +67,11 @@ export function newElement(tagName, textContext, className, name, id)
     return nTag;
 }
 
-
-
 // check of cookie exists
 export function sessionCookie()
 {
     let end;
+    // get cookies
     let dc = document.cookie;
     let prefix = "token=";
     let begin = dc.indexOf("; " + prefix);
@@ -110,7 +109,7 @@ export function hideElement(element)
     }
 }
 
-// load NAV bar
+// load NAV bar todo this should be replaced with a better approach
 export function loadNavigation()
 {
     // if cookie exists hide login button
