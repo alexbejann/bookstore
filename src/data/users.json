@@ -1,0 +1,50 @@
+{
+  "users": 
+          [
+            {
+              "id": 1,
+              "username": "yasin",
+              "password": "pass123",
+              "secret": "dsfdfsfdsfdsfs",
+              "roles": [
+                "admin"
+              ]
+            },
+            {
+              "id": 2,
+              "username": "hagrid",
+              "password": "pass123",
+              "secret": "dsfdfsfdsfdsfs",
+              "roles": [
+                "user"
+              ]
+            },
+            {
+              "id": 3,
+              "username": "alex",
+              "password": "$2b$10$36g58MHKg4x2fWNXWAruKOtE31mgpkalPf.G4UCKd7dqBhEH4qeUa",
+              "secret": "dsfdfsfdsfdsfs",
+              "roles": [
+                "admin"
+              ]
+            },
+            {
+              "id": 4,
+              "username": "cosmin",
+              "password": "pass123",
+              "secret": "dsfdfsfdsfdsfs",
+              "roles": [
+                "user"
+              ]
+            },
+            {
+              "id": 5,
+              "username": "susan",
+              "password": "",
+              "secret": "dsfdfsfdsfdsfs",
+              "roles": [
+                "admin"
+              ]
+            }
+          ]
+}
