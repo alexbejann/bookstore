@@ -2,6 +2,7 @@ const { Router } = require('express');
 const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const { StatusCodes } = require('http-status-codes');
 // Salt to hash the password
 const saltRounds = 10;
 
@@ -36,13 +37,13 @@ router.post('/auth', (req, res, next) => {
 
         if (token)
         {
-            res.status(200).send({
+            res.status(StatusCodes.OK).send({
                 "token": token
             });
         }
         else
         {
-            res.status(404)
+            res.status(StatusCodes.NOT_FOUND)
                res.json({
                  message: "Bad request, something went wrong!"
                });
@@ -80,13 +81,13 @@ router.post('/users', (req, res, next) => {
              "secret": uuidv4(),
              "roles":[]
          })
-         res.status(201)
+         res.status(StatusCodes.CREATED)
          res.json({
              message: `Welcome, ${username}!`,
          })
      } else
      {
-         res.status(400) //
+         res.status(StatusCodes.CONFLICT) //
          res.json({
              message: `${username}, already exists!`,
          })
@@ -115,7 +116,7 @@ router.get('/auth', (req, res) =>{
         }
         else
         {
-            res.status(401).send({ message: 'Unauthorized' });
+            res.status(StatusCodes.UNAUTHORIZED).send({ message: 'Unauthorized' });
         }
     }
     else

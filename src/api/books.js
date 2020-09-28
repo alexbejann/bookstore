@@ -1,8 +1,10 @@
 const { Router } = require('express');
+const { StatusCodes }= require('http-status-codes');
 
 
 const router = Router();
 const books = require('../data/books');
+const checkAdmin = require('../api/isAdmin');
 
 // Return all books
 router.get('/books', (req, res, next) => {
@@ -23,26 +25,26 @@ router.get('/', (req, res, next) => {
     {
         let result = books.books.filter(element => element.country == country);
 
-        res.status(200);
+        res.status(StatusCodes.OK);
         res.json(result);
     }
     else if(author != null)
     {
         let result = books.books.filter(element => element.author == author);
         console.log(author.trim());
-        res.status(200);
+        res.status(StatusCodes.OK);
         res.json(result);
     }
     else if (year != null)
     {
         let result = books.books.filter(element => element.year == year);
 
-        res.status(200);
+        res.status(StatusCodes.OK);
         res.json(result);
     }
     else
     {
-        res.status(200);
+        res.status(StatusCodes.OK);
         res.json(books.books);
     }
   } catch (error) {
@@ -55,14 +57,14 @@ router.get('/:id', (req,res) => {
     let book =  (books.books).find(book => book.id === req.params.id);
     if (book != null)
     {
-        res.status(200).json({
+        res.status(StatusCodes.OK).json({
             book : book,
         });
     } else {
         res.json({
             Error: "Book doesn't exists",
         });
-        res.status(404);
+        res.status(StatusCodes.NOT_FOUND);
     }
 })
 
@@ -74,12 +76,12 @@ router.get('/:id/bids', (req,res) => {
         res.json({
             Bids : book.bids,
         });
-        res.status(200);
+        res.status(StatusCodes.OK);
     } else {
         res.json({
             Error: "Book doesn't exists",
         });
-        res.status(404);
+        res.status(StatusCodes.NOT_FOUND);
     }
 })
 
@@ -92,7 +94,7 @@ router.post('/:id/bids', (req,res) => {
             "username": `${req.body.username}`,
             "amount": `${req.body.amount}`,
         });
-        res.status(201);
+        res.status(StatusCodes.CREATED);
         res.json({
             book : book.bids,
         });
@@ -101,12 +103,12 @@ router.post('/:id/bids', (req,res) => {
         res.json({
             Error: "Book doesn't exists",
         });
-        res.status(404);
+        res.status(StatusCodes.NOT_FOUND);
     }
 })
 
 // Delete bid to a book todo check if loggedin use has that specific bid
-router.delete('/:id/bids', (req,res) => {
+router.delete('/:id/bids', checkAdmin, (req,res) => {
     let book =  (books.books).find(book => book.id === req.params.id);
     let bid_ID  = req.query.id;
     if (book != null && bid_ID != null)
@@ -114,7 +116,7 @@ router.delete('/:id/bids', (req,res) => {
         let bid = book.bids.find(element => element.id == bid_ID);
         delete book.bids[book.bids.indexOf(bid)];
 
-        res.status(200);
+        res.status(StatusCodes.OK);
         res.json({
             Bids : book.bids,
         });
@@ -123,7 +125,7 @@ router.delete('/:id/bids', (req,res) => {
         res.json({
             Error: "Book doesn't exists",
         });
-        res.status(404);
+        res.status(StatusCodes.NOT_FOUND);
     }
 })
 

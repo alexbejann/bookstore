@@ -21,11 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="67c5b057-5df1-48d4-979b-19248c488fab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/administration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/administration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/bids.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/bids.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/page/administration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/administration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/page/bids.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/bids.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/page/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/books.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/isAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/isAdmin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -736,7 +735,7 @@
       <workItem from="1600793826774" duration="27000" />
       <workItem from="1600795528823" duration="610000" />
       <workItem from="1601113835153" duration="694000" />
-      <workItem from="1601117825094" duration="45809000" />
+      <workItem from="1601117825094" duration="47938000" />
     </task>
     <task id="LOCAL-00001" summary="Added nodemon mac compat">
       <created>1599571031310</created>
@@ -780,7 +779,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601211125743</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fix for administration and bids">
+      <created>1601212278272</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1601212278272</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -805,7 +811,8 @@
     <MESSAGE value="Finished tokens and encryption" />
     <MESSAGE value="Linked front-end with backend" />
     <MESSAGE value="Fixed auction.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed auction.html" />
+    <MESSAGE value="Fix for administration and bids" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix for administration and bids" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600774801079">
@@ -816,10 +823,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="83" key="#dev/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1600774824256" />
-    <state x="312" y="0" key="CommitChangelistDialog2" timestamp="1601211124828">
+    <state x="312" y="0" key="CommitChangelistDialog2" timestamp="1601212277480">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="312" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601211124828" />
+    <state x="312" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601212277480" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1601117834508">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -849,10 +856,10 @@
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1600174433897" />
     <state x="2266" y="72" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600612983673" />
-    <state x="402" y="186" key="Vcs.Push.Dialog.v2" timestamp="1601211127521">
+    <state x="402" y="186" key="Vcs.Push.Dialog.v2" timestamp="1601212279609">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="402" y="186" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601211127520" />
+    <state x="402" y="186" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601212279609" />
     <state x="440" y="237" key="Vcs.Push.Dialog.v2/0.23.1680.949@0.23.1680.949" timestamp="1599571047543" />
     <state x="532" y="293" key="git4idea.merge.GitPullDialog" timestamp="1599571038668">
       <screen x="0" y="23" width="1680" height="949" />
