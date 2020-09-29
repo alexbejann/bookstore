@@ -145,9 +145,8 @@ const isTokenValid = (token) => {
 router.delete('/', (req,res)=>{
     const bearerHeader = req.headers['authorization'];
     const token = bearerHeader ? bearerHeader.split(' ')[1] : null;
-    console.log(token)
+    console.log('Token '+token)
     if (token) {
-        console.log("breaks here in if")
         const payload = isTokenValid(token);
         if (payload) {
             const user = users

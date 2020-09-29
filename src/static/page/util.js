@@ -13,8 +13,8 @@ export function sendJSON({ method, url, body }, callback) {
     })
     xhr.open(method, url)
     xhr.setRequestHeader('Content-Type', 'application/json')
-    if (sessionToken !== undefined) {
-        xhr.setRequestHeader('Authorization', `Bearer ${sessionToken}`)
+    if (sessionCookie() != null) {
+        xhr.setRequestHeader('Authorization', `Bearer ${sessionCookie()}`)
     }
     xhr.send(body !== undefined ? JSON.stringify(body) : undefined)
 }
