@@ -8,13 +8,12 @@ const saltRounds = 10;
 
 
 const router = Router();
-const users = require('../data/users.json'); // Import json
-const fs = require('fs');
+const { users }= require('../data/users.json'); // Import json
 
 const login = (username, password)=>{
 
     console.log("breaks here in login");
-    const currentUser = users.users.find(user => user.username === username);
+    const currentUser = users.find(user => user.username === username);
     //Check password
     if (bcrypt.compareSync(password, currentUser.password))
     {
@@ -67,13 +66,13 @@ router.post('/users', (req, res, next) => {
 
     const email = req.body.email || '';
 
-    const element = users.users.find(user => user.username === username
+    const element = users.find(user => user.username === username
                                           && user.email === email);
 
 
      if (!element)
      {
-         users.users.push({
+         users.push({
              "id": uuidv4(),
              "username": `${username}`,
              "password": `${password}`,
@@ -105,7 +104,7 @@ router.get('/auth', (req, res) =>{
         const payload = isTokenValid(token);
         if (payload)
         {
-            const user = users.users
+            const user = users
                         .find(element => element.username === payload.username);
             //store the username and role in secret
             res.send({
@@ -130,7 +129,7 @@ router.get('/auth', (req, res) =>{
 
 const isTokenValid = (token) => {
     const tokenPayload = jwt.decode(token);
-    const user = users.users.find(element => element.username === tokenPayload.username);
+    const user = users.find(element => element.username === tokenPayload.username);
 
     if (user)
     {
@@ -142,5 +141,33 @@ const isTokenValid = (token) => {
     }
     return false;
 };
+//logout delete and change secret for user
+router.delete('/', (req,res)=>{
+    const bearerHeader = req.headers['authorization'];
+    const token = bearerHeader ? bearerHeader.split(' ')[1] : null;
+    console.log(token)
+    if (token) {
+        console.log("breaks here in if")
+        const payload = isTokenValid(token);
+        if (payload) {
+            const user = users
+                        .find(element => element.username === payload.username);
+            if (user)
+            {
+                user.secret = uuidv4();
+                res.status(StatusCodes.OK).send({
+                    msg:'Logged out!'
+                })
+            }
+            //store the username and role in secret
+        } else {
+            res.status(StatusCodes.NOT_FOUND).send({message: 'Bad Request, something went wrong'});
+        }
+    }
+    else
+    {
+        res.status(StatusCodes.NOT_FOUND).send({message: 'Bad Request, you are not authenticated'});
+    }
+});
 
 module.exports = router;

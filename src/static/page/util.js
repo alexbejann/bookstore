@@ -35,8 +35,17 @@ function resetToken() {
 
 export function logout()
 {
-    resetToken();
-    alert('You have successfully logged out!');
+    sendJSON({ method: 'DELETE', url: '/'}, (err, response) => {
+        // if err is undefined, the send operation was a success
+        if (!err) {
+            // the book
+            resetToken();
+            alert('You have successfully logged out!');
+        } else {
+            //return the error
+            alert(err);
+        }
+    })
 }
 
 export function getTokenPayload() {
