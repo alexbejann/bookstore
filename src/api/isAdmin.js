@@ -1,4 +1,4 @@
-const { StatusCodes } = require('http-status-code');
+const { StatusCodes } = require('http-status-codes');
 
 //Check if user is admin
 module.exports = function isAdmin (req,res,next)
