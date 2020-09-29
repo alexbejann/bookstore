@@ -13,8 +13,8 @@ export function sendJSON({ method, url, body }, callback) {
     })
     xhr.open(method, url)
     xhr.setRequestHeader('Content-Type', 'application/json')
-    if (sessionToken !== undefined) {
-        xhr.setRequestHeader('Authorization', `Bearer ${sessionToken}`)
+    if (sessionCookie() != null) {
+        xhr.setRequestHeader('Authorization', `Bearer ${sessionCookie()}`)
     }
     xhr.send(body !== undefined ? JSON.stringify(body) : undefined)
 }
@@ -35,8 +35,17 @@ function resetToken() {
 
 export function logout()
 {
-    resetToken();
-    alert('You have successfully logged out!');
+    sendJSON({ method: 'DELETE', url: '/'}, (err, response) => {
+        // if err is undefined, the send operation was a success
+        if (!err) {
+            // the book
+            resetToken();
+            alert('You have successfully logged out!');
+        } else {
+            //return the error
+            alert(err);
+        }
+    })
 }
 
 export function getTokenPayload() {

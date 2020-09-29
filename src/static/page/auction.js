@@ -53,7 +53,7 @@ function createBid(bid)
     const nTag = newElement('li', '', 'auction_detail_bid', '',`${bid.id}`);
     nTag.appendChild(newElement('span', `${bid.amount}`, 'auction_detail_bid_price', ''));
     nTag.appendChild(newElement('span', `${bid.username}`, 'auction_detail_bid_user', ''));
-    nTag.appendChild(newElement('span', `14:02`, 'auction_detail_bid_time', '',''));
+    nTag.appendChild(newElement('span', `${bid.time}`, 'auction_detail_bid_time', '',''));
 
     return nTag;
 }

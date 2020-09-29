@@ -15,17 +15,20 @@
                 {
                   "id": "1",
                   "username": "hagrid",
-                  "amount": "20"
+                  "amount": "20",
+                  "time": "19:49"
                 },
                 {
                   "id": "2",
                   "username": "susan",
-                  "amount": "10"
+                  "amount": "10",
+                  "time": "13:12"
                 },
                 {
                   "id": "3",
                   "username": "jan",
-                  "amount": "5"
+                  "amount": "5",
+                  "time": "09:00"
                 }
               ]
     },
@@ -43,17 +46,20 @@
                 {
                   "id": "1",
                   "username": "yasin",
-                  "amount": "20"
+                  "amount": "20",
+                  "time": "10:20"
                 },
                 {
                   "id": "2",
                   "username": "alex",
-                  "amount": "10"
+                  "amount": "10",
+                  "time": "12:39"
                 },
                 {
                   "id": "3",
                   "username": "cosmin",
-                  "amount": "5"
+                  "amount": "5",
+                  "time": "11:40"
                 }
               ]
     },
@@ -71,12 +77,14 @@
         {
           "id": "1",
           "username": "hagrid",
-          "amount": "20"
+          "amount": "20",
+          "time": "10:49"
         },
         {
           "id": "2",
           "username": "susan",
-          "amount": "10"
+          "amount": "10",
+          "time": "15:29"
         }
       ]
     },
@@ -94,7 +102,8 @@
         {
           "id": "1",
           "username": "alex",
-          "amount": "100"
+          "amount": "100",
+          "time": "10:00"
         }
       ]
     }
