@@ -1,3 +1,22 @@
+POST http://localhost:3000/books/1/bids
+Content-Type: application/json
+
+{
+    "username": "Jason",
+    "amount": "5"
+}
+
+<> 2020-09-29T105710.201.json
+
+###
+
+GET http://localhost:3000/books/1/bids
+Accept: application/json
+
+<> 2020-09-29T105648.200.json
+
+###
+
 GET http://localhost:3000/books/1
 Accept: application/json
 
@@ -474,20 +493,6 @@ GET http://localhost:3000/books/?author=HansChristianAndersen
 Accept: application/json
 
 <> 2020-09-15T050636.200.json
-
-###
-
-GET http://localhost:3000/books/?author=HansChristianAndersen
-Accept: application/json
-
-<> 2020-09-15T050606.200.json
-
-###
-
-GET http://localhost:3000/books/?author=Daniel
-Accept: application/json
-
-<> 2020-09-15T050521.200.json
 
 ###
 

@@ -3,7 +3,7 @@ const { StatusCodes }= require('http-status-codes');
 
 
 const router = Router();
-const books = require('../data/books');
+const { books } = require('../data/books');
 const checkAdmin = require('../api/isAdmin');
 
 // Return all books
@@ -23,21 +23,21 @@ router.get('/', (req, res, next) => {
     let year = req.query.year;
     if (country != null)
     {
-        let result = books.books.filter(element => element.country == country);
+        let result = books.filter(element => element.country == country);
 
         res.status(StatusCodes.OK);
         res.json(result);
     }
     else if(author != null)
     {
-        let result = books.books.filter(element => element.author == author);
+        let result = books.filter(element => element.author == author);
         console.log(author.trim());
         res.status(StatusCodes.OK);
         res.json(result);
     }
     else if (year != null)
     {
-        let result = books.books.filter(element => element.year == year);
+        let result = books.filter(element => element.year == year);
 
         res.status(StatusCodes.OK);
         res.json(result);
@@ -45,7 +45,7 @@ router.get('/', (req, res, next) => {
     else
     {
         res.status(StatusCodes.OK);
-        res.json(books.books);
+        res.json(books);
     }
   } catch (error) {
     next(error);
@@ -54,7 +54,7 @@ router.get('/', (req, res, next) => {
 
 // Return book by id
 router.get('/:id', (req,res) => {
-    let book =  (books.books).find(book => book.id === req.params.id);
+    let book =  (books).find(book => book.id === req.params.id);
     if (book != null)
     {
         res.status(StatusCodes.OK).json({
@@ -70,7 +70,7 @@ router.get('/:id', (req,res) => {
 
 // Return bids of a book
 router.get('/:id/bids', (req,res) => {
-    let book =  (books.books).find(book => book.id === req.params.id);
+    let book =  (books).find(book => book.id === req.params.id);
     if (book != null)
     {
         res.json({
@@ -87,7 +87,7 @@ router.get('/:id/bids', (req,res) => {
 
 // Post bid to a book
 router.post('/:id/bids', (req,res) => {
-    let book =  (books.books).find(book => book.id === req.params.id);
+    let book =  (books).find(book => book.id === req.params.id);
     if (book != null)
     {
         book.bids.push({
@@ -109,7 +109,7 @@ router.post('/:id/bids', (req,res) => {
 
 // Delete bid to a book todo check if loggedin use has that specific bid
 router.delete('/:id/bids', checkAdmin, (req,res) => {
-    let book =  (books.books).find(book => book.id === req.params.id);
+    let book =  (books).find(book => book.id === req.params.id);
     let bid_ID  = req.query.id;
     if (book != null && bid_ID != null)
     {

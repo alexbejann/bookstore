@@ -36,10 +36,7 @@ function createBook(book)
 {
     const nTag = newElement('section', '', 'auction_box', '');
     const bookTitle = nTag.appendChild(newElement('a', `${book.title}`, 'auction_title', '',`${book.id}`));
-    bookTitle.href = 'auction.html';
-    bookTitle.addEventListener('click', event =>{
-        localStorage.setItem('bookID',event.currentTarget.id)
-    })
+    bookTitle.href = `auction.html?id=${book.id}`;
     nTag.appendChild(newElement('p', `Author: ${book.author}`, 'auction_description'));
     nTag.appendChild(newElement('p', `Year: ${book.year}`, 'auction_description'));
     const bidsContainer = nTag.appendChild(newElement('div', '','auction_bid',''));

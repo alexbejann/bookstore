@@ -1,13 +1,14 @@
 // import utilities from util.js
-import { sendJSON, validateInputControl, logout, loadNavigation} from './util.js'
+import { sendJSON, validateInputControl, logout, loadNavigation, newElement } from './util.js'
 
 // grab form controls from the DOM
 const
-    form = document.querySelector('auction_form'),
-    nameField = form.querySelector('input[type="text"]'),
-    authorField = form.querySelector('input[type="text"]'),
-    yearField = form.querySelector('input[type="text"]'),
-    priceField = form.querySelector('input[type="text"]'),
+    form = document.getElementById('add_form'),
+    nameField = document.getElementById('name_field'),
+    authorField = document.getElementById('author_field'),
+    yearField = document.getElementById('year_field'),
+    priceField = document.getElementById('price_field'),
+    timeField = document.getElementById('time_field'),
     addButton = form.querySelector('input[type="submit"]'),
     logoutButton = document.getElementById('logout')
 
@@ -16,16 +17,39 @@ window.onload = (event) =>{
 
     loadNavigation()
 
-    sendJSON({ method: 'GET', url: '/bids' }, (err, response) => {
+    sendJSON({ method: 'GET', url: '/books' }, (err, response) => {
         // if err is undefined, the send operation was a success
         if (!err) {
-            console.log(response)
+            createAuctionTable(response);
         } else {
             alert(err);
             console.error(err);
         }
     })
 };
+
+//create auction
+const createAuctionTable = (response) =>{
+
+    for (let index=0; index < response.length; index++)
+    {
+        createAuctionElement(response[index]);
+    }
+}
+// create auction element
+const createAuctionElement = (book)=>{
+    const aucContainer =document.getElementById('auction_table');
+    const container = aucContainer.appendChild(newElement('tr','','','',''));
+    container.appendChild(newElement('td',`${book.title}`,'','',''));
+    container.appendChild(newElement('td',`${book.author}`,'','',''));
+    container.appendChild(newElement('td',`${book.year}`,'','',''));
+    container.appendChild(newElement('td',`${book.price}`,'','',''));
+    container.appendChild(newElement('td',`${book.time}`,'','',''));
+    // add actions
+    const actionContainer = container.appendChild(newElement('td','','','',''));
+    actionContainer.appendChild(newElement('i','','fa fa-pencil','',''));
+    actionContainer.appendChild(newElement('i','','fa fa-trash','',''));
+}
 
 // validate login form
 function validateForm() {
@@ -34,12 +58,14 @@ function validateForm() {
         authorOk = authorField.value.length > 0,
         yearOk = yearField.value.length > 0,
         priceOk = priceField.value.length > 0,
+        timeOk = timeField.value.length > 0,
         addOk = nameOk && authorOk && yearOk && priceOk
     // provide visual feedback for controls in a 'bad' state
     validateInputControl(nameField, nameOk)
     validateInputControl(authorField, authorOk)
     validateInputControl(yearField, yearOk)
     validateInputControl(priceField, priceOk)
+    validateInputControl(timeField, timeOk)
     validateInputControl(addButton, addOk)
     // enable/disable click of login button
     addButton.disabled = !addOk

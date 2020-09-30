@@ -39,6 +39,7 @@ export function logout()
         // if err is undefined, the send operation was a success
         if (!err) {
             // the book
+            console.log(document.cookie)
             resetToken();
             alert('You have successfully logged out!');
         } else {

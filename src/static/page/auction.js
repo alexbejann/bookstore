@@ -10,7 +10,13 @@ window.onload = (event) =>{
 
     loadNavigation();
 
-    queryBook(localStorage.getItem('bookID'))
+    queryBook(searchParams())
+};
+
+const searchParams = ()=>{
+    let url = new URL(window.location.href);
+    let params = new URLSearchParams(url.search);
+  return params.get('id');
 };
 
 function queryBook(id)

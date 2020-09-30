@@ -32,46 +32,25 @@
         <h1 class="auction_title">Add, update or delete auctions</h1>
     </div>
     <div class="row">
-        <table>
+        <table id="auction_table">
             <tr>
                 <th>Name</th>
+                <th>Author</th>
+                <th>Year</th>
+                <th>Price</th>
                 <th>End time</th>
                 <th>Actions</th>
-            </tr>
-            <tr>
-                <td>Auction 1</td>
-                <td>14:00 uur</td>
-                <td>
-                    <i class="fa fa-pencil"></i>
-                    <i class="fa fa-trash"></i>
-                </td>
-            </tr>
-            <tr>
-                <td>Auction 2</td>
-                <td>15:00 uur</td>
-                <td>
-                    <i class="fa fa-pencil"></i>
-                    <i class="fa fa-trash"></i>
-                </td>
-            </tr>
-            <tr>
-                <td>Auction 1</td>
-                <td>16:00 uur</td>
-                <td>
-                    <i class="fa fa-pencil"></i>
-                    <i class="fa fa-trash"></i>
-                </td>
             </tr>
         </table>
     </div>
     <div class="row">
-        <form class="auction_form" method="" action="">
+        <form id="add_form" class="auction_form" method="" action="">
             <h1 class="auction_title">Add an auction</h1>
-            <input type="text" placeholder="Name" name="name"/>
-            <input type="text" placeholder="Author" name="author"/>
-            <input type="text" placeholder="Year" name="year"/>
-            <input type="text" placeholder="Price" name="price"/>
-            <input type="text" placeholder="End time" name="end_time"/>
+            <input id="name_field" type="text" placeholder="Name" name="name"/>
+            <input id="author_field" type="text" placeholder="Author" name="author"/>
+            <input id="year_field" type="text" placeholder="Year" name="year"/>
+            <input id="price_field" type="text" placeholder="Price" name="price"/>
+            <input id="time_field" type="text" placeholder="End time" name="end_time"/>
             <input type="submit" value="Add"/>
         </form>
     </div>
