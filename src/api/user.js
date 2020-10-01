@@ -12,7 +12,6 @@ const { users }= require('../data/users.json'); // Import json
 
 const login = (username, password)=>{
 
-    console.log("breaks here in login");
     const currentUser = users.find(user => user.username === username);
     //Check password
     if (bcrypt.compareSync(password, currentUser.password))
@@ -120,7 +119,7 @@ router.get('/auth', (req, res) =>{
     }
     else
     {
-        req.json({
+        req.status(StatusCodes.UNAUTHORIZED).json({
             msg: 'Not authorized!'
         })
     }
@@ -142,7 +141,7 @@ const isTokenValid = (token) => {
     return false;
 };
 //logout delete and change secret for user
-router.delete('/', (req,res)=>{
+router.delete('/auth', (req,res)=>{
     const bearerHeader = req.headers['authorization'];
     const token = bearerHeader ? bearerHeader.split(' ')[1] : null;
     console.log('Token '+token)

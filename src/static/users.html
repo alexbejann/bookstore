@@ -5,9 +5,9 @@
     <title>Saxion Auction site</title>
     <link rel="stylesheet" href="public/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="./page/index.js" type="module"></script>
+    <script src="./page/users.js" type="module"></script>
 </head>
-<body id="body">
+<body>
 
 <header>
     <div class="banner_image"></div>
@@ -15,7 +15,18 @@
 <!-- Don't forget to only show the options you are allowed to see-->
 <nav class="auction_nav"></nav>
 <main>
-    <div id="book-container" class="row"></div>
+    <div class="row">
+        <h1 class="auction_title">Users</h1>
+    </div>
+    <div class="row">
+        <table id="user_table">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>User type</th>
+            </tr>
+        </table>
+    </div>
 </main>
 </body>
 </html>

@@ -56,6 +56,6 @@ validateForm()
 // on page load show the right items on page
 window.onload = (event) =>{
 
-    loadNavigation();
+    loadNavigation('login');
 
 };

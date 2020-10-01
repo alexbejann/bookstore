@@ -1,5 +1,5 @@
 // import utilities from util.js
-import { sendJSON, logout, loadNavigation, newElement } from './util.js'
+import { sendJSON, loadNavigation, newElement } from './util.js'
 
 // grab form controls from the DOM
 const
@@ -8,7 +8,7 @@ const
 // on page load get all the books
 window.onload = (event) =>{
 
-    loadNavigation();
+    loadNavigation('home');
 
     queryBook(searchParams())
 };
@@ -63,9 +63,3 @@ function createBid(bid)
 
     return nTag;
 }
-
-// logout
-logoutButton.addEventListener('click', (event) =>{
-    // Logout
-    logout();
-})

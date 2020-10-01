@@ -1,11 +1,12 @@
 // logout
-import {logout} from "./util";
+import { loadNavigation } from "./util.js";
 
 // grab form controls from the DOM
 const
     logoutButton = document.getElementById('logout')
 
-logoutButton.addEventListener('click', (event) =>{
-    // Logout
-    logout();
-})
+window.onload = (event) =>{
+
+    loadNavigation('bids');
+
+};

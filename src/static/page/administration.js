@@ -1,5 +1,5 @@
 // import utilities from util.js
-import { sendJSON, validateInputControl, logout, loadNavigation, newElement } from './util.js'
+import {sendJSON, validateInputControl, loadNavigation, newElement, saveToken, newElem} from './util.js'
 
 // grab form controls from the DOM
 const
@@ -9,13 +9,13 @@ const
     yearField = document.getElementById('year_field'),
     priceField = document.getElementById('price_field'),
     timeField = document.getElementById('time_field'),
-    addButton = form.querySelector('input[type="submit"]'),
-    logoutButton = document.getElementById('logout')
-
+    addButton = document.getElementById('add')
 // on page load get all the bids and hide nav
 window.onload = (event) =>{
 
-    loadNavigation()
+    loadNavigation('administration')
+
+    //createForm();
 
     sendJSON({ method: 'GET', url: '/books' }, (err, response) => {
         // if err is undefined, the send operation was a success
@@ -47,8 +47,26 @@ const createAuctionElement = (book)=>{
     container.appendChild(newElement('td',`${book.time}`,'','',''));
     // add actions
     const actionContainer = container.appendChild(newElement('td','','','',''));
-    actionContainer.appendChild(newElement('i','','fa fa-pencil','',''));
-    actionContainer.appendChild(newElement('i','','fa fa-trash','',''));
+    const edit = actionContainer.appendChild(newElement('i','','fa fa-pencil','',''));
+    edit.addEventListener('click', event =>{
+        event.preventDefault();
+
+        // todo append boxes to edit the book detail
+    })
+    const deleteBook = actionContainer.appendChild(newElement('i','','fa fa-trash','',''));
+    deleteBook.addEventListener('click', event=>{
+        event.preventDefault();
+
+        /*sendJSON({ method: 'DELETE', url: '/books', body }, (err, response) => {
+            // if err is undefined, the send operation was a success
+            if (!err) {
+                // todo create book
+            } else {
+                alert(err)
+                console.error(response);
+            }
+        })*/
+    });
 }
 
 // validate login form
@@ -77,8 +95,56 @@ form.addEventListener('input', validateForm)
 // validate form on page load
 validateForm()
 
-// logout
-logoutButton.addEventListener('click', (event) =>{
-    // Logout
-    logout();
-})
+// create add form
+function createForm()
+{
+    // create containers
+    const container = document.getElementsByClassName('row')[2];
+    const form = container.appendChild(newElement('form', '','auction_form','form_action2','add_form'));
+    form.method = '';
+    form.action = '';
+
+    // create fields
+    form.appendChild(newElem('h1','Add book','auction_title'));
+    form.appendChild(createInputField('name_field','text','Name','name'));
+    form.appendChild(createInputField('author_field','text','Author','author'));
+    form.appendChild(createInputField('year_field','text','Year','year'));
+    form.appendChild(createInputField('price_field','text','Price','price'));
+    form.appendChild(createInputField('time_field','text','End time','end_time'));
+    // add button
+    const submit = document.createElement('input');
+    submit.type = 'submit';
+    submit.id= 'add';
+    submit.value = 'Add';
+    submit.addEventListener('click', event => {
+        // do not submit form (the default action of a submit button)
+        event.preventDefault()
+        // construct request body with username and password
+        const body = { name: nameField.value,
+            author: authorField.value,
+            year: yearField.value,
+            price: priceField.value,
+            time: timeField.value
+        }
+        // send PUT request with body to /credentials and wait for HTTP response
+        sendJSON({ method: 'POST', url: '/books', body }, (err, response) => {
+            // if err is undefined, the send operation was a success
+            if (!err) {
+                // todo create book
+            } else {
+                alert(err)
+                console.error(response);
+            }
+        })
+    })
+    form.appendChild(submit);
+}
+
+function createInputField(id, type, placeholder, name)
+{
+    const inputField = document.createElement('input');
+    inputField.type = type;
+    inputField.name = name;
+    inputField.id = id;
+    return inputField;
+}

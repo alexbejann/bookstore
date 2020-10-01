@@ -9,7 +9,7 @@ const checkAdmin = require('../api/isAdmin');
 // Return all books
 router.get('/books', (req, res, next) => {
     try {
-       res.status(200).send(books.books);
+       res.status(200).send(books);
     } catch (error) {
         next(error);
     }

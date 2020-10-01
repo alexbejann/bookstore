@@ -1,5 +1,5 @@
 // import utilities from util.js
-import { sendJSON, logout, loadNavigation, newElement } from './util.js';
+import { sendJSON, loadNavigation, newElement } from './util.js';
 
 // grab form controls from the DOM
 const
@@ -17,7 +17,7 @@ function createBooks(response)
 // on page load get all the books
 window.onload = (event) =>{
 
-    loadNavigation();
+    loadNavigation('home');
 
     sendJSON({ method: 'GET', url: '/books' }, (err, response) => {
         // if err is undefined, the send operation was a success
@@ -44,9 +44,3 @@ function createBook(book)
     bidsContainer.appendChild(newElement('span',`${book.time}`,'auction_bid_time',''));
     return nTag;
 }
-
-// logout
-logoutButton.addEventListener('click', (event) =>{
-    // Logout
-    logout();
-})
