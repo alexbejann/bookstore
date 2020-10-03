@@ -5,7 +5,7 @@ const app = express();
 
 const middlewares = require('./middlewares');
 const books = require('./api/books');
-const user = require('./api/user');
+const { user_router } = require('./api/user');
 
 // Use the static folder
 app.use(express.static(__dirname+'/static'));
@@ -25,7 +25,7 @@ app.get("/", (req, res) =>{
 
 app.use('/books', books); // Process books router
 
-app.use('/', user); // Processes multiple requests 
+app.use('/', user_router ); // Processes multiple requests
 
 
 app.use(middlewares.notFound);

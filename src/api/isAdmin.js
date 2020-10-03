@@ -1,7 +1,7 @@
 const { StatusCodes } = require('http-status-codes');
 
 //Check if user is admin
-module.exports = function isAdmin (req,res,next)
+function isAdmin (req,res,next)
 {
     if (req.user.roles.indexOf('admin') === -1)
     {
@@ -13,7 +13,8 @@ module.exports = function isAdmin (req,res,next)
     }
     else
     {
-        console.log('You can manage you bids');
+        console.log('User is admin');
         next();
     }
 }
+module.exports = isAdmin

@@ -2,7 +2,7 @@
 export function sendJSON({ method, url, body }, callback) {
     const xhr = new XMLHttpRequest()
     xhr.addEventListener('load', () => {
-        if (xhr.status === 200 && xhr.status < 300) {
+        if (xhr.status >= 200 && xhr.status < 300) {
             callback(undefined, JSON.parse(xhr.responseText))
         } else {
             callback(new Error(xhr.statusText))
@@ -125,12 +125,12 @@ export function loadNavigation(active)
                             active === 'bids' ? 'active' : '' ));
         bids.href = 'bids.html';
 
-        const administration = nav.appendChild(newElem('a','Administration',
-                                        active === 'administration' ? 'active' : '' ));
-        administration.href = 'administration.html';
-
         if (payload.roles[0] === 'admin')
         {
+            const administration = nav.appendChild(newElem('a','Administration',
+            active === 'administration' ? 'active' : '' ));
+            administration.href = 'administration.html';
+
             const users = nav.appendChild(newElem('a','Users',
                                 active === 'users' ? 'active' : '' ));
             users.href = 'users.html';

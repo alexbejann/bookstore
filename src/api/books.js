@@ -4,7 +4,9 @@ const { StatusCodes }= require('http-status-codes');
 
 const router = Router();
 const { books } = require('../data/books');
-const checkAdmin = require('../api/isAdmin');
+const { getToken, isTokenValid } = require('./user');
+const isAuthenticated = require('./isAuthenticated');
+const isAdmin = require('./isAdmin')
 
 // Return all books
 router.get('/books', (req, res, next) => {
@@ -14,6 +16,44 @@ router.get('/books', (req, res, next) => {
         next(error);
     }
 });
+
+// Get bids for a user
+router.get('/bids', (req,res) => {
+
+    const payload = isTokenValid(getToken(req));
+    console.log('Bids for user....')
+    if (payload)
+    {
+        const
+            username = payload.username,
+            user_bids = [];
+        for (let index = 0; index < books.length ; index++)
+        {
+            const bid =  books[index].bids.find(bid => bid.username === username);
+            console.log('book',books[index].title)
+            if (bid)
+            {
+                //todo fix this! is working only if you have one bid,
+                // if you have 2 doesn't work anymore
+                user_bids.push({
+                    "id":""+ bid.id,
+                    "price": books[index].price,
+                    "title": books[index].title,
+                    "time": bid.time,
+                })
+            }
+        }
+        res
+            .status(StatusCodes.OK)
+            .json(user_bids);
+    }
+    else
+    {
+        res
+            .status(StatusCodes.UNAUTHORIZED)
+            .json({Error: "Please login!"});
+    }
+})
 
 // Retrieve books with parameters
 router.get('/', (req, res, next) => {
@@ -25,8 +65,9 @@ router.get('/', (req, res, next) => {
     {
         let result = books.filter(element => element.country == country);
 
-        res.status(StatusCodes.OK);
-        res.json(result);
+        res
+            .status(StatusCodes.OK)
+            .json(result);
     }
     else if(author != null)
     {
@@ -87,45 +128,157 @@ router.get('/:id/bids', (req,res) => {
 
 // Post bid to a book
 router.post('/:id/bids', (req,res) => {
-    let book =  (books).find(book => book.id === req.params.id);
-    if (book != null)
-    {
-        book.bids.push({
-            "username": `${req.body.username}`,
-            "amount": `${req.body.amount}`,
-        });
-        res.status(StatusCodes.CREATED);
-        res.json({
-            book : book.bids,
-        });
 
-    } else {
-        res.json({
-            Error: "Book doesn't exists",
-        });
-        res.status(StatusCodes.NOT_FOUND);
+    console.log('Do post id/bids')
+    const payload = isTokenValid(getToken(req));
+    console.log('Token is valid');
+    if (payload)
+    {
+        let book =  (books).find(book => book.id === req.params.id);
+        if (book)
+        {
+            const date = new Date();
+            book.bids.push({
+                            "id":""+Math.floor(Math.random() * 110000)+1,
+                            "username": `${req.body.username}`,
+                            "amount": `${req.body.amount}`,
+                            "time":  ''+date.getHours()+':'+date.getMinutes()
+                            });
+            res
+                .status(StatusCodes.CREATED)
+                .json(book.bids);
+
+
+        } else {
+            console.log('Book does not exist');
+            res.json({
+                Error: "Book doesn't exists",
+            });
+            res.status(StatusCodes.NOT_FOUND);
+        }
+    }
+    else
+    {
+        res.status(StatusCodes.UNAUTHORIZED).send({"msg":'You are not logged in!'})
     }
 })
 
-// Delete bid to a book todo check if loggedin use has that specific bid
-router.delete('/:id/bids', checkAdmin, (req,res) => {
-    let book =  (books).find(book => book.id === req.params.id);
-    let bid_ID  = req.query.id;
-    if (book != null && bid_ID != null)
+//Post new book
+router.post('/', (req,res) => {
+
+    console.log('Creating new book')
+    const payload = isTokenValid(getToken(req));
+    console.log('Token is valid');
+    if (payload)
     {
-        let bid = book.bids.find(element => element.id == bid_ID);
-        delete book.bids[book.bids.indexOf(bid)];
+        if (payload.roles.indexOf('admin') > -1)
+        {
+            const title = req.body.name,
+                  author = req.body.author,
+                  year = req.body.year,
+                  price = req.body.price,
+                  time = req.body.time;
 
-        res.status(StatusCodes.OK);
-        res.json({
-            Bids : book.bids,
-        });
+            const exist =  books.find(book => book.title === title);
+            if (!exist)
+            {
 
-    } else {
-        res.json({
-            Error: "Book doesn't exists",
-        });
-        res.status(StatusCodes.NOT_FOUND);
+                books.push({
+                    "id":""+Math.floor(Math.random() * 110000)+1,
+                    "author": author,
+                    "country": "Nigeria",
+                    "pages": Math.floor(Math.random() * 300)+10,
+                    "title": title,
+                    "year": year,
+                    "price": price,
+                    "time": time,
+                    "bids": []
+                });
+                res
+                    .status(StatusCodes.CREATED)
+                    .json(books);
+            }
+            else {
+                console.log('Book exists');
+                res
+                    .status(StatusCodes.CONFLICT)
+                    .json({ Error: "Book already exists"});
+            }
+        }
+    }
+    else
+    {
+        res.status(StatusCodes.UNAUTHORIZED).send({"msg":'You are not logged in!'})
+    }
+})
+
+// Delete bid to a book
+router.delete('/:id/bids', (req,res) => {
+
+    const payload = isTokenValid(getToken(req));
+
+    if (payload)
+    {
+        let book =  (books).find(book => book.id === req.params.id);
+        let bid_ID  = req.query.id;
+        if (book != null && bid_ID != null)
+        {
+            let bid = book.bids.find(element => element.id == bid_ID);
+            delete book.bids[book.bids.indexOf(bid)];
+
+            res.status(StatusCodes.OK);
+            res.json({
+                Bids : book.bids,
+            });
+
+        } else {
+            res.json({
+                Error: "Book doesn't exists",
+            });
+            res.status(StatusCodes.NOT_FOUND);
+        }
+    }
+})
+
+// Delete book
+router.delete('/:id', (req,res) => {
+
+    const payload = isTokenValid(getToken(req));
+
+    if (payload)
+    {
+        if (payload.roles.indexOf('admin') > -1)
+        {
+            let book =  (books).find(book => book.id === req.params.id);
+
+            if (book)
+            {
+                //remove book
+                const index = books.indexOf(book);
+                books.splice(index, 1);
+
+                res
+                    .status(StatusCodes.OK)
+                    .json({msg: "Book removed"})
+
+            } else {
+                res
+                    .status(StatusCodes.NOT_FOUND)
+                    .json({
+                        Error: "Book doesn't exists",
+                    })
+            }
+        }
+        else
+        {
+            res
+                .status(StatusCodes.UNAUTHORIZED)
+        }
+    }
+    else
+    {
+        res
+            .status(StatusCodes.UNAUTHORIZED)
     }
 })
 

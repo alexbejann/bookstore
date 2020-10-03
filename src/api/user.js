@@ -7,15 +7,18 @@ const { StatusCodes } = require('http-status-codes');
 const saltRounds = 10;
 
 
-const router = Router();
+const user_router = Router();
 const { users }= require('../data/users.json'); // Import json
+const { books } = require('../data/books.json'); // Import books
 
+//login method
 const login = (username, password)=>{
 
     const currentUser = users.find(user => user.username === username);
     //Check password
     if (bcrypt.compareSync(password, currentUser.password))
     {
+        //set user secret
         return jwt.sign({
             username: currentUser.username,
             roles: currentUser.roles
@@ -25,7 +28,7 @@ const login = (username, password)=>{
 }
 
 // User login
-router.post('/auth', (req, res, next) => {
+user_router.post('/auth', (req, res, next) => {
     try {
         let username = req.body.username || '';
 
@@ -35,16 +38,15 @@ router.post('/auth', (req, res, next) => {
 
         if (token)
         {
-            res.status(StatusCodes.OK).send({
-                "token": token
-            });
+            res
+                .status(StatusCodes.OK)
+                .send({"token": token});
         }
         else
         {
-            res.status(StatusCodes.NOT_FOUND)
-               res.json({
-                 message: "Bad request, something went wrong!"
-               });
+               res
+                   .status(StatusCodes.NOT_FOUND)
+                   .json({message: "Bad request, something went wrong!"});
         }
       
     } catch (error) {
@@ -57,13 +59,14 @@ const encryptedPassword = (password) =>{
 };
 
 // User register, user is the resource => post to user || create the user
-router.post('/users', (req, res, next) => {
+user_router.post('/users', (req, res, next) => {
   try {
     let username = req.body.username;
 
+    //todo check password
     const password = encryptedPassword(req.body.password || '');
 
-    const email = req.body.email || '';
+    const email = verifyEmail(req.body.email || '');
 
     const element = users.find(user => user.username === username
                                           && user.email === email);
@@ -79,25 +82,33 @@ router.post('/users', (req, res, next) => {
              "secret": uuidv4(),
              "roles":[]
          })
-         res.status(StatusCodes.CREATED)
-         res.json({
-             message: `Welcome, ${username}!`,
+         res
+             .status(StatusCodes.CREATED)
+             .json({message: `Welcome, ${username}!`,
          })
      } else
      {
-         res.status(StatusCodes.CONFLICT) //
-         res.json({
-             message: `${username}, already exists!`,
-         })
+         res
+             .status(StatusCodes.CONFLICT)
+             .json({message: `${username}, already exists!`})
      }
   } catch (error) {
     next(error);
   }
 });
 
-router.get('/auth', (req, res) =>{
-    const bearerHeader = req.headers['authorization'];
-    const token = bearerHeader ? bearerHeader.split(' ')[1] : null;
+// check email by specified regex
+const verifyEmail = (email) =>{
+
+    console.log('Checking email...'+email);
+    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return regex.test(email.toLowerCase());
+}
+
+//
+user_router.get('/auth', (req, res) =>{
+
+    const token = getToken(req);
     if (token)
     {
         const payload = isTokenValid(token);
@@ -114,19 +125,69 @@ router.get('/auth', (req, res) =>{
         }
         else
         {
-            res.status(StatusCodes.UNAUTHORIZED).send({ message: 'Unauthorized' });
+            res
+                .status(StatusCodes.UNAUTHORIZED)
+                .send({ message: 'Unauthorized' });
         }
     }
     else
     {
-        req.status(StatusCodes.UNAUTHORIZED).json({
-            msg: 'Not authorized!'
-        })
+        req
+            .status(StatusCodes.UNAUTHORIZED)
+            .json({msg: 'Not authorized!'})
     }
 });
 
+// get all users
+user_router.get('/users', (req, res) =>{
 
+    const token = getToken(req);
+    if (token)
+    {
+        const payload = isTokenValid(token);
+        // check if user is admin
+        if (payload)
+        {
+            if (payload.roles.indexOf('admin') > -1)
+            {
+                //return all users
+                res
+                    .status(StatusCodes.OK)
+                    .send(users)
+            }
+            else
+            {
+                res
+                    .status(StatusCodes.UNAUTHORIZED)
+                    .send({ message: 'Unauthorized, you are supposed to be admin' });
+            }
+        }
+        else
+        {
+            res
+                .status(StatusCodes.UNAUTHORIZED)
+                .send({ message: 'Unauthorized' });
+        }
+    }
+    else
+    {
+        req
+            .status(StatusCodes.UNAUTHORIZED)
+            .json({msg: 'Not authorized! Login first!'})
+    }
+});
+
+// get token from header
+const getToken = (req)=>{
+
+    const bearerHeader = req.headers['authorization'];
+
+    return bearerHeader ? bearerHeader.split(' ')[1] : false;
+}
+
+//check if token is valid
 const isTokenValid = (token) => {
+
     const tokenPayload = jwt.decode(token);
     const user = users.find(element => element.username === tokenPayload.username);
 
@@ -140,10 +201,12 @@ const isTokenValid = (token) => {
     }
     return false;
 };
+
 //logout delete and change secret for user
-router.delete('/auth', (req,res)=>{
-    const bearerHeader = req.headers['authorization'];
-    const token = bearerHeader ? bearerHeader.split(' ')[1] : null;
+user_router.delete('/auth', (req, res)=>{
+
+    const token = getToken(req);
+
     console.log('Token '+token)
     if (token) {
         const payload = isTokenValid(token);
@@ -153,19 +216,27 @@ router.delete('/auth', (req,res)=>{
             if (user)
             {
                 user.secret = uuidv4();
-                res.status(StatusCodes.OK).send({
-                    msg:'Logged out!'
-                })
+                res
+                    .status(StatusCodes.OK)
+                    .send({msg:'Logged out!'})
             }
             //store the username and role in secret
         } else {
-            res.status(StatusCodes.NOT_FOUND).send({message: 'Bad Request, something went wrong'});
+            res
+                .status(StatusCodes.NOT_FOUND)
+                .send({message: 'Bad Request, something went wrong'});
         }
     }
     else
     {
-        res.status(StatusCodes.NOT_FOUND).send({message: 'Bad Request, you are not authenticated'});
+        res
+            .status(StatusCodes.NOT_FOUND)
+            .send({message: 'Bad Request, you are not authenticated'});
     }
 });
 
-module.exports = router;
+module.exports = {
+    user_router: user_router,
+    getToken,
+    isTokenValid
+};

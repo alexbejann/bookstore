@@ -5,15 +5,17 @@
               "id": 1,
               "username": "yasin",
               "password": "pass123",
+              "email": "someoneemail@yahoo.com",
               "secret": "dsfdfsfewr324545yfcdsfdsfs",
               "roles": [
-                "admin"
+                "user"
               ]
             },
             {
               "id": 2,
               "username": "hagrid",
               "password": "pass123",
+              "email": "randomemail@yahoo.com",
               "secret": "dsfdfsfddsfdffdee3432432gfdeerwersfdsfs",
               "roles": [
                 "user"
@@ -23,6 +25,7 @@
               "id": 3,
               "username": "alex",
               "password": "$2b$10$36g58MHKg4x2fWNXWAruKOtE31mgpkalPf.G4UCKd7dqBhEH4qeUa",
+              "email": "alexathome@yahoo.com",
               "secret": "dsfdfsfdsf434reg54535dsfs",
               "roles": [
                 "admin"
@@ -32,18 +35,20 @@
               "id": 4,
               "username": "cosmin",
               "password": "pass123",
+              "email": "cosminmuc@yahoo.com",
               "secret": "dsfdfsfdsfdsfs34tregfb545trgffd",
               "roles": [
-                "user"
+                "admin"
               ]
             },
             {
               "id": 5,
               "username": "susan",
               "password": "",
+              "email": "someonesemail@yahoo.com",
               "secret": "dsfdfsfdsfdsfsrey346hbvcdsf42wagjm",
               "roles": [
-                "admin"
+                "user"
               ]
             }
           ]
