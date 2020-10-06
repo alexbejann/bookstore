@@ -187,6 +187,8 @@ const createSearch = (nav)=>{
     //dropdown
     const datalist = document.createElement('datalist')
     datalist.id = 'dropdown'
+    datalist.appendChild(newElem('option','Alex','option'))
+    datalist.appendChild(newElem('option','Alex2','option'))
     //append children
     button.appendChild(icon)
     form.appendChild(searchbox)
