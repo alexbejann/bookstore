@@ -20,22 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67c5b057-5df1-48d4-979b-19248c488fab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/api/isAuthenticated.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-15T050636.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-15T050659.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/books.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/isAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/isAdmin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/users.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/administration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/administration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/auction.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/auction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/books.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/books.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/static/bids.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/bids.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/static/page/administration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/administration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/page/auction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/auction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/static/page/bids.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/bids.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/page/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/page/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/static/page/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/util.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/users.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +88,54 @@
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
       <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="DELETE" />
+          <option name="urlBase" value="http://localhost:3000/books/bids" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="id" />
+                <option name="value" value="3" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="DELETE" />
+          <option name="urlBase" value="http://localhost:3000/books/1/bids" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="id" />
+                <option name="value" value="3" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
         <RestClientRequest>
           <option name="httpMethod" value="POST" />
           <option name="urlBase" value="http://localhost:3000/books/1/bids" />
@@ -266,30 +310,6 @@
               <KeyValuePair>
                 <option name="key" value="year" />
                 <option name="value" value="1979" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="DELETE" />
-          <option name="urlBase" value="http://localhost:3000/books/1/bids" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="id" />
-                <option name="value" value="3" />
               </KeyValuePair>
             </list>
           </option>
@@ -708,13 +728,13 @@
     <configuration name="requests#13" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/rest/requests.rest" index="13" runType="Run single request">
       <method v="2" />
     </configuration>
+    <configuration name="requests#5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/rest/requests.rest" index="5" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="requests#6" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/rest/requests.rest" index="6" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="userCalls#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/rest/userCalls.rest" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="userCalls#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/rest/userCalls.rest" index="2" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="DEV" type="js.build_tools.npm">
@@ -729,11 +749,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.requests#5" />
         <item itemvalue="HTTP Request.requests#6" />
         <item itemvalue="HTTP Request.requests#11 (1)" />
         <item itemvalue="HTTP Request.requests#13" />
         <item itemvalue="HTTP Request.userCalls#1" />
-        <item itemvalue="HTTP Request.userCalls#2" />
       </list>
     </recent_temporary>
   </component>
@@ -766,7 +786,7 @@
       <workItem from="1601117825094" duration="56803000" />
       <workItem from="1601392527276" duration="17881000" />
       <workItem from="1601545887696" duration="17119000" />
-      <workItem from="1601627558930" duration="32167000" />
+      <workItem from="1601627558930" duration="48427000" />
     </task>
     <task id="LOCAL-00001" summary="Added nodemon mac compat">
       <created>1599571031310</created>
@@ -845,7 +865,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601587356503</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="missing: -filter auctions&#10;         -edit auctions">
+      <created>1601748028856</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1601748028856</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -875,7 +902,8 @@
     <MESSAGE value="Changes" />
     <MESSAGE value="Added books to administration.html and got rid of the localstorage implementation" />
     <MESSAGE value="-fixed nav bar&#10;-added users html&#10;-fixed logout function" />
-    <option name="LAST_COMMIT_MESSAGE" value="-fixed nav bar&#10;-added users html&#10;-fixed logout function" />
+    <MESSAGE value="missing: -filter auctions&#10;         -edit auctions" />
+    <option name="LAST_COMMIT_MESSAGE" value="missing: -filter auctions&#10;         -edit auctions" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600774801079">
@@ -890,36 +918,36 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="83" key="#dev/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1600774824256" />
-    <state x="312" y="0" key="CommitChangelistDialog2" timestamp="1601587355588">
+    <state x="312" y="0" key="CommitChangelistDialog2" timestamp="1601748028031">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="312" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601587355588" />
+    <state x="312" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601748028031" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1601629519244">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601629519244" />
-    <state width="1493" height="315" key="GridCell.Tab.0.bottom" timestamp="1601747071030">
+    <state width="1493" height="302" key="GridCell.Tab.0.bottom" timestamp="1601985252548">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601747071030" />
+    <state width="1493" height="302" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601985252548" />
     <state width="1875" height="154" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601400133110" />
     <state width="1638" height="254" key="GridCell.Tab.0.bottom/0.23.1680.949@0.23.1680.949" timestamp="1599573047842" />
-    <state width="1493" height="315" key="GridCell.Tab.0.center" timestamp="1601747071030">
+    <state width="1493" height="302" key="GridCell.Tab.0.center" timestamp="1601985252547">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601747071030" />
+    <state width="1493" height="302" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601985252547" />
     <state width="1875" height="154" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601400133110" />
     <state width="1638" height="254" key="GridCell.Tab.0.center/0.23.1680.949@0.23.1680.949" timestamp="1599573047841" />
-    <state width="1493" height="315" key="GridCell.Tab.0.left" timestamp="1601747071030">
+    <state width="1493" height="302" key="GridCell.Tab.0.left" timestamp="1601985252547">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601747071030" />
+    <state width="1493" height="302" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601985252547" />
     <state width="1875" height="154" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601400133110" />
     <state width="1638" height="254" key="GridCell.Tab.0.left/0.23.1680.949@0.23.1680.949" timestamp="1599573047841" />
-    <state width="1493" height="315" key="GridCell.Tab.0.right" timestamp="1601747071030">
+    <state width="1493" height="302" key="GridCell.Tab.0.right" timestamp="1601985252548">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="315" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601747071030" />
+    <state width="1493" height="302" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601985252548" />
     <state width="1875" height="154" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601400133110" />
     <state width="1638" height="254" key="GridCell.Tab.0.right/0.23.1680.949@0.23.1680.949" timestamp="1599573047842" />
     <state x="472" y="31" key="RollbackChangesDialog" timestamp="1601396257899">
@@ -931,10 +959,10 @@
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1600174433897" />
     <state x="2266" y="72" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600612983673" />
-    <state x="402" y="186" key="Vcs.Push.Dialog.v2" timestamp="1601587363949">
+    <state x="402" y="186" key="Vcs.Push.Dialog.v2" timestamp="1601748030648">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="402" y="186" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601587363949" />
+    <state x="402" y="186" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601748030648" />
     <state x="440" y="237" key="Vcs.Push.Dialog.v2/0.23.1680.949@0.23.1680.949" timestamp="1599571047543" />
     <state x="486" y="234" key="git4idea.merge.GitPullDialog" timestamp="1601390620819">
       <screen x="0" y="0" width="1536" height="824" />
@@ -953,10 +981,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="209" y="0" key="new project wizard/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1600793851954" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1601579176004">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1601810388300">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601579176004" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1601810388300" />
     <state x="2451" y="236" key="run.anything.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601382223361" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1601148904866">
       <screen x="0" y="0" width="1536" height="824" />

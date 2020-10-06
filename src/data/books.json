@@ -9,7 +9,7 @@
       "title": "Things Fall Apart",
       "year": "1958",
       "price": 80,
-      "time": "4 hours",
+      "time": "14:00",
       "bids":
               [
                 {
@@ -40,7 +40,7 @@
       "title": "Fairy tales",
       "year": "1836",
       "price": 50,
-      "time": "1 hours",
+      "time": "12:00",
       "bids":
               [
                 {
@@ -60,6 +60,12 @@
                   "username": "cosmin",
                   "amount": "5",
                   "time": "11:40"
+                },
+                {
+                  "id": "3",
+                  "username": "alex",
+                  "amount": "100",
+                  "time": "11:42"
                 }
               ]
     },
@@ -71,7 +77,7 @@
       "title": "Lord Of Rings",
       "year": "1979",
       "price": 40,
-      "time": "10 minutes",
+      "time": "11:00",
       "bids":
       [
         {
@@ -96,7 +102,7 @@
       "title": "Permanent Record",
       "year": "2019",
       "price": 100,
-      "time": "20 minutes",
+      "time": "19:00",
       "bids":
       [
         {

@@ -29,18 +29,21 @@ router.get('/bids', (req,res) => {
             user_bids = [];
         for (let index = 0; index < books.length ; index++)
         {
-            const bid =  books[index].bids.find(bid => bid.username === username);
-            console.log('book',books[index].title)
-            if (bid)
+            const bookBids = books[index].bids;
+
+            for (let i = 0; i < bookBids.length ; i++)
             {
-                //todo fix this! is working only if you have one bid,
-                // if you have 2 doesn't work anymore
-                user_bids.push({
-                    "id":""+ bid.id,
-                    "price": books[index].price,
-                    "title": books[index].title,
-                    "time": bid.time,
-                })
+                if (bookBids[i].username === username)
+                {
+                    console.log('Bid added',bookBids[i])
+                    user_bids.push({
+                        "bookID": "" + books[index].id,// book id
+                        "bidID": bookBids[i].id, // bid id
+                        "price": bookBids[i].amount,
+                        "title": books[index].title,
+                        "time": bookBids[i].time,
+                    })
+                }
             }
         }
         res
@@ -148,13 +151,11 @@ router.post('/:id/bids', (req,res) => {
                 .status(StatusCodes.CREATED)
                 .json(book.bids);
 
-
         } else {
             console.log('Book does not exist');
-            res.json({
-                Error: "Book doesn't exists",
-            });
-            res.status(StatusCodes.NOT_FOUND);
+            res
+                .status(StatusCodes.NOT_FOUND)
+                .send({"Error": "Book doesn't exists"});
         }
     }
     else
@@ -177,7 +178,8 @@ router.post('/', (req,res) => {
                   author = req.body.author,
                   year = req.body.year,
                   price = req.body.price,
-                  time = req.body.time;
+                  time = req.body.time,
+                  country = req.body.country;
 
             const exist =  books.find(book => book.title === title);
             if (!exist)
@@ -186,7 +188,7 @@ router.post('/', (req,res) => {
                 books.push({
                     "id":""+Math.floor(Math.random() * 110000)+1,
                     "author": author,
-                    "country": "Nigeria",
+                    "country": country,
                     "pages": Math.floor(Math.random() * 300)+10,
                     "title": title,
                     "year": year,
@@ -212,11 +214,12 @@ router.post('/', (req,res) => {
     }
 })
 
-// Delete bid to a book
+// Delete bid from a book
 router.delete('/:id/bids', (req,res) => {
 
     const payload = isTokenValid(getToken(req));
 
+    console.log('Deleting bid from book...',req.params.id, req.query.id)
     if (payload)
     {
         let book =  (books).find(book => book.id === req.params.id);
@@ -224,18 +227,17 @@ router.delete('/:id/bids', (req,res) => {
         if (book != null && bid_ID != null)
         {
             let bid = book.bids.find(element => element.id == bid_ID);
-            delete book.bids[book.bids.indexOf(bid)];
-
+            book.bids.splice(book.bids.indexOf(bid), 1);
+            console.log('log',bid)
             res.status(StatusCodes.OK);
             res.json({
                 Bids : book.bids,
             });
 
         } else {
-            res.json({
-                Error: "Book doesn't exists",
-            });
-            res.status(StatusCodes.NOT_FOUND);
+            res
+                .status(StatusCodes.NOT_FOUND)
+                .send({"Error": "Book doesn't exists"});
         }
     }
 })
@@ -264,21 +266,21 @@ router.delete('/:id', (req,res) => {
             } else {
                 res
                     .status(StatusCodes.NOT_FOUND)
-                    .json({
-                        Error: "Book doesn't exists",
-                    })
+                    .json({Error: "Book doesn't exists"})
             }
         }
         else
         {
             res
                 .status(StatusCodes.UNAUTHORIZED)
+                .send({"MSG":'You should be admin for this action!'})
         }
     }
     else
     {
         res
             .status(StatusCodes.UNAUTHORIZED)
+            .send({"MSG":'Please login!'})
     }
 })
 

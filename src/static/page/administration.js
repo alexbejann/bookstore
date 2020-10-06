@@ -10,7 +10,8 @@ window.onload = (event) =>{
         // if err is undefined, the send operation was a success
         if (!err) {
             createAuctionTable(response);
-        } else {
+        }
+        else {
             alert(err);
             console.error(err);
         }
@@ -44,6 +45,7 @@ const createAuctionElement = (book)=>{
         event.preventDefault();
 
         // todo append boxes to edit the book detail do it with innerhtml
+
     })
     const deleteBook = actionContainer.appendChild(newElement('i','','fa fa-trash','',''));
     deleteBook.addEventListener('click', event=>{
@@ -54,7 +56,7 @@ const createAuctionElement = (book)=>{
             if (!err) {
                 const book_del = document.getElementById(book.id);
                 book_del.remove();
-                console.log('book deleted')
+                alert('Book deleted!')
             } else {
                 alert(err)
                 console.error(response);
@@ -72,6 +74,7 @@ function validateForm() {
         yearField = document.getElementById('year_field'),
         priceField = document.getElementById('price_field'),
         timeField = document.getElementById('time_field'),
+        countryField = document.getElementById('country_field'),
         addButton = document.getElementById('add')
 
     const
@@ -80,6 +83,7 @@ function validateForm() {
         yearOk = yearField.value.length > 0,
         priceOk = priceField.value.length > 0,
         timeOk = timeField.value.length > 0,
+        countryOk = countryField.value.length >0,
         addOk = nameOk && authorOk && yearOk && priceOk
     // provide visual feedback for controls in a 'bad' state
     validateInputControl(nameField, nameOk)
@@ -87,6 +91,7 @@ function validateForm() {
     validateInputControl(yearField, yearOk)
     validateInputControl(priceField, priceOk)
     validateInputControl(timeField, timeOk)
+    validateInputControl(countryField, countryOk)
     validateInputControl(addButton, addOk)
     // enable/disable click of login button
     addButton.disabled = !addOk
@@ -108,6 +113,7 @@ function createForm()
     form.appendChild(createInputField('year_field','text','Year','year'));
     form.appendChild(createInputField('price_field','text','Price','price'));
     form.appendChild(createInputField('time_field','text','End time','end_time'));
+    form.appendChild(createInputField('country_field','text','Country','country'));
     form.addEventListener('input', validateForm);
     // add button
     const submit = document.createElement('input');

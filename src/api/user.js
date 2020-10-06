@@ -61,6 +61,7 @@ const encryptedPassword = (password) =>{
 // User register, user is the resource => post to user || create the user
 user_router.post('/users', (req, res, next) => {
   try {
+      console.log('Registering user...')
     let username = req.body.username;
 
     //todo check password

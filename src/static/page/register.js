@@ -21,10 +21,9 @@ registerButton.addEventListener('click', event => {
     sendJSON({ method: 'POST', url: '/users', body }, (err, response) => {
         // if err is undefined, the send operation was a success
         if (!err) {
-            //TODO do something
+            alert('You\'re ready to log in')
             console.log(response);
         } else {
-
             alert(err);
             console.error(err);
         }
@@ -34,6 +33,8 @@ registerButton.addEventListener('click', event => {
 // validate login form
 function validateForm() {
     const
+        passRegex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})$/,
+        emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
         usernameOk = usernameField.value.length > 0,
         emailOk = emailField.value.length > 0,
         passwordOk = passwordField.value.length > 0,

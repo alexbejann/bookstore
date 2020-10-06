@@ -1,10 +1,6 @@
 // logout
 import {loadNavigation, newElement, sendJSON} from "./util.js";
 
-// grab form controls from the DOM
-const
-    logoutButton = document.getElementById('logout')
-
 window.onload = (event) =>{
 
     loadNavigation('bids');
@@ -43,13 +39,14 @@ const createBids = (bid)=>{
     deleteBid.addEventListener('click', event=>{
         event.preventDefault();
 
-        sendJSON({ method: 'DELETE', url: `books/${bid.id}` }, (err, response) => {
+        sendJSON({ method: 'DELETE', url: `/books/${bid.bookID}/bids?id=${bid.bidID}` }, (err, response) => {
             // if err is undefined, the send operation was a success
             if (!err) {
                 const book_del = document.getElementById(bid.id);
                 book_del.remove();
-                console.log('bid deleted')
-            } else {
+                alert('Bid deleted successfully!')
+            }
+            else {
                 alert(err)
                 console.error(response);
             }

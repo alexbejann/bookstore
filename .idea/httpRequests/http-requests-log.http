@@ -1,3 +1,17 @@
+DELETE http://localhost:3000/books/bids?id=3
+Accept: application/json
+
+<> 2020-10-03T111107.500.json
+
+###
+
+DELETE http://localhost:3000/books/1/bids?id=3
+Accept: application/json
+
+<> 2020-10-03T110719.500.json
+
+###
+
 POST http://localhost:3000/books/1/bids
 Content-Type: application/json
 
@@ -479,20 +493,6 @@ GET http://localhost:3000/books/?author=HansChristianAndersen
 Accept: application/json
 
 <> 2020-09-15T050834.200.json
-
-###
-
-GET http://localhost:3000/books/?author=Hans Christian Andersen
-Accept: application/json
-
-<> 2020-09-15T050659.200.json
-
-###
-
-GET http://localhost:3000/books/?author=HansChristianAndersen
-Accept: application/json
-
-<> 2020-09-15T050636.200.json
 
 ###
 

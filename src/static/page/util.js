@@ -120,7 +120,6 @@ export function loadNavigation(active)
 
     if (cookie)
     {
-        // todo check if user is admin
         const bids = nav.appendChild(newElem('a','My Bids',
                             active === 'bids' ? 'active' : '' ));
         bids.href = 'bids.html';
@@ -178,14 +177,19 @@ const createSearch = (nav)=>{
     searchbox.type = 'text';
     searchbox.placeholder = 'Search..';
     searchbox.name = 'search';
+    searchbox.setAttribute('list','dropdown')
     //button
     const button = document.createElement('button');
     button.type = 'submit';
     //icon
     const icon = document.createElement('i')
     icon.className = 'fa fa-search';
+    //dropdown
+    const datalist = document.createElement('datalist')
+    datalist.id = 'dropdown'
     //append children
-    button.appendChild(icon);
-    form.appendChild(searchbox);
+    button.appendChild(icon)
+    form.appendChild(searchbox)
+    form.appendChild(datalist)
     form.appendChild(button)
 }
