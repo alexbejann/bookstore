@@ -4,7 +4,6 @@ const { StatusCodes }= require('http-status-codes');
 
 const router = Router();
 const { books } = require('../data/books');
-const { getToken, isTokenValid } = require('./user');
 const isAuthenticated = require('./isAuthenticated');
 const isAdmin = require('./isAdmin')
 
@@ -18,15 +17,14 @@ router.get('/books', (req, res, next) => {
 });
 
 // Get bids for a user
-router.get('/bids', (req,res) => {
+router.get('/bids', isAuthenticated, (req,res) => {
 
-    const payload = isTokenValid(getToken(req));
     console.log('Bids for user....')
-    if (payload)
-    {
+
         const
-            username = payload.username,
+            username = req.tokenPayload.username,
             user_bids = [];
+
         for (let index = 0; index < books.length ; index++)
         {
             const bookBids = books[index].bids;
@@ -49,13 +47,6 @@ router.get('/bids', (req,res) => {
         res
             .status(StatusCodes.OK)
             .json(user_bids);
-    }
-    else
-    {
-        res
-            .status(StatusCodes.UNAUTHORIZED)
-            .json({Error: "Please login!"});
-    }
 })
 
 // Retrieve books with parameters
@@ -76,20 +67,23 @@ router.get('/', (req, res, next) => {
     {
         let result = books.filter(element => element.author == author);
         console.log(author.trim());
-        res.status(StatusCodes.OK);
-        res.json(result);
+        res
+            .status(StatusCodes.OK)
+            .json(result);
     }
     else if (year != null)
     {
         let result = books.filter(element => element.year == year);
 
-        res.status(StatusCodes.OK);
-        res.json(result);
+        res
+            .status(StatusCodes.OK)
+            .json(result);
     }
     else
     {
-        res.status(StatusCodes.OK);
-        res.json(books);
+        res
+            .status(StatusCodes.OK)
+            .json(books);
     }
   } catch (error) {
     next(error);
@@ -101,14 +95,13 @@ router.get('/:id', (req,res) => {
     let book =  (books).find(book => book.id === req.params.id);
     if (book != null)
     {
-        res.status(StatusCodes.OK).json({
-            book : book,
-        });
+        res
+            .status(StatusCodes.OK)
+            .json({ book : book, });
     } else {
-        res.json({
-            Error: "Book doesn't exists",
-        });
-        res.status(StatusCodes.NOT_FOUND);
+        res
+            .status(StatusCodes.NOT_FOUND)
+            .json({Error: "Book doesn't exists",});
     }
 })
 
@@ -117,170 +110,128 @@ router.get('/:id/bids', (req,res) => {
     let book =  (books).find(book => book.id === req.params.id);
     if (book != null)
     {
-        res.json({
-            Bids : book.bids,
-        });
-        res.status(StatusCodes.OK);
+        res
+            .status(StatusCodes.OK)
+            .json({ Bids : book.bids, });
     } else {
-        res.json({
-            Error: "Book doesn't exists",
-        });
-        res.status(StatusCodes.NOT_FOUND);
+        res
+            .status(StatusCodes.NOT_FOUND)
+            .json({ Error: "Book doesn't exists", });
     }
 })
 
 // Post bid to a book
-router.post('/:id/bids', (req,res) => {
+router.post('/:id/bids',isAuthenticated, (req,res) => {
 
     console.log('Do post id/bids')
-    const payload = isTokenValid(getToken(req));
-    console.log('Token is valid');
-    if (payload)
-    {
-        let book =  (books).find(book => book.id === req.params.id);
-        if (book)
-        {
-            const date = new Date();
-            book.bids.push({
-                            "id":""+Math.floor(Math.random() * 110000)+1,
-                            "username": `${req.body.username}`,
-                            "amount": `${req.body.amount}`,
-                            "time":  ''+date.getHours()+':'+date.getMinutes()
-                            });
-            res
-                .status(StatusCodes.CREATED)
-                .json(book.bids);
 
-        } else {
-            console.log('Book does not exist');
-            res
-                .status(StatusCodes.NOT_FOUND)
-                .send({"Error": "Book doesn't exists"});
-        }
-    }
-    else
+    let book =  (books).find(book => book.id === req.params.id);
+    if (book)
     {
-        res.status(StatusCodes.UNAUTHORIZED).send({"msg":'You are not logged in!'})
+        const date = new Date();
+        book.bids.push({
+                        "id":""+Math.floor(Math.random() * 110000)+1,
+                        "username": `${req.body.username}`,
+                        "amount": `${req.body.amount}`,
+                        "time":  ''+date.getHours()+':'+date.getMinutes()
+                        });
+        res
+            .status(StatusCodes.CREATED)
+            .json(book.bids);
+
+    } else {
+        console.log('Book does not exist');
+        res
+            .status(StatusCodes.NOT_FOUND)
+            .send({"Error": "Book doesn't exists"});
     }
 })
 
 //Post new book
-router.post('/', (req,res) => {
+router.post('/', isAuthenticated, isAdmin,(req,res) => {
 
     console.log('Creating new book')
-    const payload = isTokenValid(getToken(req));
-    console.log('Token is valid');
-    if (payload)
+
+    const title = req.body.name,
+          author = req.body.author,
+          year = req.body.year,
+          price = req.body.price,
+          time = req.body.time,
+          country = req.body.country;
+
+    const exist =  books.find(book => book.title === title);
+    if (!exist)
     {
-        if (payload.roles.indexOf('admin') > -1)
-        {
-            const title = req.body.name,
-                  author = req.body.author,
-                  year = req.body.year,
-                  price = req.body.price,
-                  time = req.body.time,
-                  country = req.body.country;
 
-            const exist =  books.find(book => book.title === title);
-            if (!exist)
-            {
-
-                books.push({
-                    "id":""+Math.floor(Math.random() * 110000)+1,
-                    "author": author,
-                    "country": country,
-                    "pages": Math.floor(Math.random() * 300)+10,
-                    "title": title,
-                    "year": year,
-                    "price": price,
-                    "time": time,
-                    "bids": []
-                });
-                res
-                    .status(StatusCodes.CREATED)
-                    .json(books);
-            }
-            else {
-                console.log('Book exists');
-                res
-                    .status(StatusCodes.CONFLICT)
-                    .json({ Error: "Book already exists"});
-            }
-        }
+        books.push({
+            "id":""+Math.floor(Math.random() * 110000)+1,
+            "author": author,
+            "country": country,
+            "pages": Math.floor(Math.random() * 300)+10,
+            "title": title,
+            "year": year,
+            "price": price,
+            "time": time,
+            "bids": []
+        });
+        res
+            .status(StatusCodes.CREATED)
+            .json(books);
     }
-    else
-    {
-        res.status(StatusCodes.UNAUTHORIZED).send({"msg":'You are not logged in!'})
+    else {
+        console.log('Book exists');
+        res
+            .status(StatusCodes.CONFLICT)
+            .json({ Error: "Book already exists"});
     }
 })
 
 // Delete bid from a book
-router.delete('/:id/bids', (req,res) => {
-
-    const payload = isTokenValid(getToken(req));
+router.delete('/:id/bids',isAuthenticated, (req,res) => {
 
     console.log('Deleting bid from book...',req.params.id, req.query.id)
-    if (payload)
-    {
-        let book =  (books).find(book => book.id === req.params.id);
-        let bid_ID  = req.query.id;
-        if (book != null && bid_ID != null)
-        {
-            let bid = book.bids.find(element => element.id == bid_ID);
-            book.bids.splice(book.bids.indexOf(bid), 1);
-            console.log('log',bid)
-            res.status(StatusCodes.OK);
-            res.json({
-                Bids : book.bids,
-            });
 
-        } else {
-            res
-                .status(StatusCodes.NOT_FOUND)
-                .send({"Error": "Book doesn't exists"});
-        }
+    let book =  (books).find(book => book.id === req.params.id);
+    let bid_ID  = req.query.id;
+    if (book != null && bid_ID != null)
+    {
+        let bid = book.bids.find(element => element.id == bid_ID);
+
+        console.log('Bid to be deleted:',bid)
+
+        book.bids.splice(book.bids.indexOf(bid), 1);
+        console.log('Bid:',bid)
+
+        res
+            .status(StatusCodes.OK)
+            .json({ Bids : book.bids, });
+
+    } else {
+        res
+            .status(StatusCodes.NOT_FOUND)
+            .send({"Error": "Book doesn't exists"});
     }
 })
 
 // Delete book
-router.delete('/:id', (req,res) => {
+router.delete('/:id',isAuthenticated, isAdmin,(req,res) => {
 
-    const payload = isTokenValid(getToken(req));
+    let book =  (books).find(book => book.id === req.params.id);
 
-    if (payload)
+    if (book)
     {
-        if (payload.roles.indexOf('admin') > -1)
-        {
-            let book =  (books).find(book => book.id === req.params.id);
+        //remove book
+        const index = books.indexOf(book);
+        books.splice(index, 1);
 
-            if (book)
-            {
-                //remove book
-                const index = books.indexOf(book);
-                books.splice(index, 1);
-
-                res
-                    .status(StatusCodes.OK)
-                    .json({msg: "Book removed"})
-
-            } else {
-                res
-                    .status(StatusCodes.NOT_FOUND)
-                    .json({Error: "Book doesn't exists"})
-            }
-        }
-        else
-        {
-            res
-                .status(StatusCodes.UNAUTHORIZED)
-                .send({"MSG":'You should be admin for this action!'})
-        }
-    }
-    else
-    {
         res
-            .status(StatusCodes.UNAUTHORIZED)
-            .send({"MSG":'Please login!'})
+            .status(StatusCodes.OK)
+            .json({msg: "Book removed"})
+
+    } else {
+        res
+            .status(StatusCodes.NOT_FOUND)
+            .json({Error: "Book doesn't exists"})
     }
 })
 

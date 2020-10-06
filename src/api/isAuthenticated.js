@@ -1,6 +1,6 @@
 const { StatusCodes }= require('http-status-codes');
 
-const { getToken, isTokenValid } = require('./user');
+const { getToken, isTokenValid } = require('./tokenValidation');
 
 const isAuthenticated = (req,res,next)=>{
 
@@ -10,6 +10,7 @@ const isAuthenticated = (req,res,next)=>{
 
     if (payload)
     {
+        req.tokenPayload = payload
         console.log('User is authenticated!');
         next();
     }

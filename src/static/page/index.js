@@ -1,9 +1,6 @@
 // import utilities from util.js
 import { sendJSON, loadNavigation, newElement } from './util.js';
 
-// grab form controls from the DOM
-const
-    logoutButton = document.getElementById('logout');
 
 function createBooks(response)
 {

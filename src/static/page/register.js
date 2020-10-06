@@ -37,7 +37,7 @@ function validateForm() {
         emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
         usernameOk = usernameField.value.length > 0,
         emailOk = emailField.value.length > 0,
-        passwordOk = passwordField.value.length > 0,
+        passwordOk = passRegex.test(passwordField.value),
         registerOk = usernameOk && emailOk &&passwordOk
     // provide visual feedback for controls in a 'bad' state
     validateInputControl(usernameField, usernameOk)
