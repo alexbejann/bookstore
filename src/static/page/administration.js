@@ -1,5 +1,5 @@
 // import utilities from util.js
-import {sendJSON, validateInputControl, loadNavigation, newElement, newElem} from './util.js'
+import {sendJSON, validateInputControl, loadNavigation, newElement, newElem, saveToken} from './util.js'
 
 // on page load get all the bids and hide nav
 window.onload = (event) =>{
@@ -16,8 +16,6 @@ window.onload = (event) =>{
             console.error(err);
         }
     })
-
-    validateForm();
 };
 
 //create auction
@@ -28,24 +26,66 @@ const createAuctionTable = (response) =>{
         createAuctionElement(response[index]);
     }
     createForm();
+    validateForm()
 }
 // create auction element
 const createAuctionElement = (book)=>{
     const aucContainer =document.getElementById('auction_table'),
           container = aucContainer.appendChild(newElement('tr','','','',`${book.id}`));
-    container.appendChild(newElement('td',`${book.title}`,'','',''));
-    container.appendChild(newElement('td',`${book.author}`,'','',''));
-    container.appendChild(newElement('td',`${book.year}`,'','',''));
-    container.appendChild(newElement('td',`${book.price}`,'','',''));
-    container.appendChild(newElement('td',`${book.time}`,'','',''));
+    container.appendChild(newElement('td',`${book.title}`,'','','title'));
+    container.appendChild(newElement('td',`${book.author}`,'','','author'));
+    container.appendChild(newElement('td',`${book.year}`,'','','year'));
+    container.appendChild(newElement('td',`${book.price}`,'','','price'));
+    container.appendChild(newElement('td',`${book.time}`,'','','time'));
     // add actions
     const actionContainer = container.appendChild(newElement('td','','','','')),
-          edit = actionContainer.appendChild(newElement('i','','fa fa-pencil','',''));
+          edit = actionContainer.appendChild(newElement('i','','fa fa-pencil','','edit'));
+
+    const bookValues = [book.title, book.author, book.year, book.price, book.time]
     edit.addEventListener('click', event =>{
         event.preventDefault();
 
-        // todo append boxes to edit the book detail do it with innerhtml
+        deleteBook.style.display = "none";
+        edit.style.display = "none";
+        for (let index = 0; index < 5; index++)
+        {
+            let child = container.children[index];
+            update(child)
+        }
 
+        const save = actionContainer.appendChild(newElement('i','','fa fa-save','','save'));
+
+        save.addEventListener('click', event =>{
+            event.preventDefault();
+
+            //Save changes
+            const val = [];
+
+            for (let index  = 0; index < 5 ; index++)
+            {
+                let currentChild = container.children[index];
+                if (!(currentChild.firstChild.value === bookValues[index]))
+                {
+                    //console.log(`the ${currentChild.id} have been changed: `+currentChild.firstChild.value, bookValues[index]);
+                    val.push({
+                        fieldChanged: currentChild.id,
+                        newValue: "" + currentChild.firstChild.value,
+                    })
+                }
+            }
+            const body = {changes: val};
+            // send PUT request
+            sendJSON({ method: 'PUT', url: '/books/'+book.id, body }, (err, response) => {
+                // if err is undefined, the send operation was a success
+                if (!err) {
+                    // reload page to see changes
+                    location.reload()
+                } else {
+                    alert(err)
+                    console.error(response);
+                }
+            })
+        })
     })
     const deleteBook = actionContainer.appendChild(newElement('i','','fa fa-trash','',''));
     deleteBook.addEventListener('click', event=>{
@@ -65,6 +105,16 @@ const createAuctionElement = (book)=>{
     });
 }
 
+function update(child)
+{
+    if (child != "[object HTMLInputElement]")
+    {
+        //Get contents off cell clicked
+        let content = child.firstChild.nodeValue;
+        //Switch to text input field
+        child.innerHTML = "<input type = 'text' name = 'txtNewInput' id = 'txtNewInput' value = '" + content + "'/>";
+    }
+}
 // validate login form
 function validateForm() {
 
@@ -93,7 +143,7 @@ function validateForm() {
     validateInputControl(timeField, timeOk)
     validateInputControl(countryField, countryOk)
     validateInputControl(addButton, addOk)
-    // enable/disable click of login button
+    // enable/disable click
     addButton.disabled = !addOk
 }
 

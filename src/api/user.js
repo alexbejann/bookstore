@@ -97,6 +97,7 @@ user_router.post('/users', (req, res, next) => {
       }
 });
 
+/*
 //
 user_router.get('/auth', (req, res) =>{
 
@@ -129,6 +130,7 @@ user_router.get('/auth', (req, res) =>{
             .json({msg: 'Not authorized!'})
     }
 });
+*/
 
 // get all users
 user_router.get('/users',isAuthenticated, isAdmin,(req, res) =>{

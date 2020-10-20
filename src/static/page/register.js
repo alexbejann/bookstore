@@ -4,9 +4,10 @@ import { sendJSON, validateInputControl, loadNavigation } from './util.js'
 // grab form controls from the DOM
 const
     form = document.querySelector('main form'),
-    usernameField = form.querySelector('input[type="text"]'),
-    emailField = form.querySelector('input[type="text"]'),
-    passwordField = form.querySelector('input[type="password"]'),
+    usernameField = form.querySelector('input[placeholder="Username"]'),
+    emailField = form.querySelector('input[placeholder="Email"]'),
+    passwordField = form.querySelector('input[placeholder="Password"]'),
+    passwordRepeatField = form.querySelector('input[placeholder="Password repeat"]'),
     registerButton = form.querySelector('input[type="submit"]')
 
 // respond to click event on login button
@@ -38,11 +39,14 @@ function validateForm() {
         usernameOk = usernameField.value.length > 0,
         emailOk = emailField.value.length > 0,
         passwordOk = passRegex.test(passwordField.value),
-        registerOk = usernameOk && emailOk &&passwordOk
+        passwordRepeatOK = passwordField.value === passwordRepeatField.value,
+        registerOk = usernameOk && emailOk &&passwordOk && passwordRepeatOK;
+    console.log(passwordRepeatOK,passwordOk)
     // provide visual feedback for controls in a 'bad' state
     validateInputControl(usernameField, usernameOk)
     validateInputControl(emailField, emailOk)
     validateInputControl(passwordField, passwordOk)
+    validateInputControl(passwordRepeatField, passwordRepeatOK)
     validateInputControl(registerButton, registerOk)
     // enable/disable click of login button
     registerButton.disabled = !registerOk

@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
+const cors = require('cors');
 const app = express();
 
 const middlewares = require('./middlewares');
@@ -14,6 +15,11 @@ app.use(express.static(__dirname+'/static'));
 app.use(helmet());
 // Use morgan for common logs
 app.use(morgan('common'));
+
+// Allow requests only from this origin
+app.use(cors({
+    origin: 'http://localhost:5000',
+}));
 
 app.use(express.json());
 

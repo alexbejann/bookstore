@@ -1,3 +1,15 @@
+PUT http://localhost:3000/books/id
+Content-Type: application/json
+
+{
+    "title": "Harry Potter",
+    "pages": "20"
+}
+
+<> 2020-10-17T011657.404.json
+
+###
+
 DELETE http://localhost:3000/books/bids?id=3
 Accept: application/json
 
@@ -486,13 +498,6 @@ GET http://localhost:3000/books/?author=HansChristianAndersen
 Accept: application/json
 
 <> 2020-09-15T050903.200.json
-
-###
-
-GET http://localhost:3000/books/?author=HansChristianAndersen
-Accept: application/json
-
-<> 2020-09-15T050834.200.json
 
 ###
 

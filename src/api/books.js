@@ -19,7 +19,7 @@ router.get('/books', (req, res, next) => {
 // Get bids for a user
 router.get('/bids', isAuthenticated, (req,res) => {
 
-    console.log('Bids for user....')
+    console.log('Bids for user....',req.tokenPayload.username)
 
         const
             username = req.tokenPayload.username,
@@ -145,6 +145,47 @@ router.post('/:id/bids',isAuthenticated, (req,res) => {
             .status(StatusCodes.NOT_FOUND)
             .send({"Error": "Book doesn't exists"});
     }
+})
+
+// Update book
+router.put('/:id', isAuthenticated, isAdmin,(req,res) => {
+
+    console.log('Updating book....'+req.params.id)
+    let book =  (books).find(book => book.id === req.params.id);
+    const changes = req.body.changes;
+
+    console.log("This should be changed "+changes,req.body.changes[0]);
+    for (let index  = 0; index < changes.length ; index++)
+    {
+        const fieldChanged = changes[index].fieldChanged,
+            newValue = changes[index].newValue;
+        console.log(fieldChanged, newValue);
+        if ("title" === fieldChanged)
+        {
+
+            book.title =  newValue;
+        }
+        else if ("author" === fieldChanged)
+        {
+            book.author =  newValue;
+        }
+        else if ("year" === fieldChanged)
+        {
+            book.year =  newValue;
+        }
+        else if ("price" === fieldChanged)
+        {
+            book.price = newValue;
+        }
+        else if ("time" === fieldChanged)
+        {
+            book.time =  newValue;
+        }
+    }
+    console.log(book);
+    res
+        .status(StatusCodes.OK)
+        .send(book);
 })
 
 //Post new book
