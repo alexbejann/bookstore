@@ -35,9 +35,9 @@ registerButton.addEventListener('click', event => {
 function validateForm() {
     const
         passRegex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})$/,
-        emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+        emailRegex = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.(com|nl)/,
         usernameOk = usernameField.value.length > 0,
-        emailOk = emailField.value.length > 0,
+        emailOk = emailRegex.test(emailField.value),
         passwordOk = passRegex.test(passwordField.value),
         passwordRepeatOK = passwordField.value === passwordRepeatField.value,
         registerOk = usernameOk && emailOk &&passwordOk && passwordRepeatOK;
