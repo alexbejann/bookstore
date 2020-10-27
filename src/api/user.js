@@ -46,7 +46,7 @@ user_router.post('/auth', (req, res, next) => {
         {
                res
                    .status(StatusCodes.NOT_FOUND)
-                   .json({message: "Bad request, something went wrong!"});
+                   .json({message: "Username or password are incorrect!"});
         }
       
     } catch (error) {
@@ -96,41 +96,6 @@ user_router.post('/users', (req, res, next) => {
         next(error);
       }
 });
-
-/*
-//
-user_router.get('/auth', (req, res) =>{
-
-    const token = getToken(req);
-    if (token)
-    {
-        const payload = isTokenValid(token);
-        if (payload)
-        {
-            const user = users
-                        .find(element => element.username === payload.username);
-            //store the username and role in secret
-            res.send({
-                    username: user.username,
-                    roles: user.roles
-                }
-            );
-        }
-        else
-        {
-            res
-                .status(StatusCodes.UNAUTHORIZED)
-                .send({ message: 'Unauthorized' });
-        }
-    }
-    else
-    {
-        req
-            .status(StatusCodes.UNAUTHORIZED)
-            .json({msg: 'Not authorized!'})
-    }
-});
-*/
 
 // get all users
 user_router.get('/users',isAuthenticated, isAdmin,(req, res) =>{

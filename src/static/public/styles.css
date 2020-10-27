@@ -227,9 +227,15 @@ h1.title {
 form input.bad {
     border-color: red;
 }
+.form-control span
+{
+    color: red;
+}
 
 input[type=text],
-input[type=password] {
+input[type=password],
+input[type=number],
+input[type=time]{
     color: gray;
     padding: 0.5rem;
     font-size: 17px;
@@ -238,6 +244,7 @@ input[type=password] {
 
 .register_form input[type=text],
 .register_form input[type=password],
+.register_form input[type=email],
 .login_form input[type=text],
 .login_form input[type=password] {
     width: 100%;

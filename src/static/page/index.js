@@ -36,6 +36,7 @@ function createBook(book)
     bookTitle.href = `auction.html?id=${book.id}`;
     nTag.appendChild(newElement('p', `Author: ${book.author}`, 'auction_description'));
     nTag.appendChild(newElement('p', `Year: ${book.year}`, 'auction_description'));
+    nTag.appendChild(newElement('p', `Country: ${book.country}`, 'auction_description'));
     const bidsContainer = nTag.appendChild(newElement('div', '','auction_bid',''));
     bidsContainer.appendChild(newElement('span', `${book.price}`, 'auction_bid_price',''));
     bidsContainer.appendChild(newElement('span',`${book.time}`,'auction_bid_time',''));

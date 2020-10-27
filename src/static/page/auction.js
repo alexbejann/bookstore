@@ -1,10 +1,6 @@
 // import utilities from util.js
 import {sendJSON, loadNavigation, newElement, newElem, sessionCookie, getTokenPayload} from './util.js'
 
-// grab form controls from the DOM
-const
-    logoutButton = document.getElementById('logout');
-
 // on page load get all the books
 window.onload = (event) =>{
 
@@ -43,13 +39,19 @@ function fillBookInformation(book)
             newElement('h1',`${book.title}`,'auction_title','',''));
     auctionContainer
         .appendChild(
-            newElement('span',`${book.author} ${book.year}`,'auction_description','',''));
+            newElement('p',`Book author: ${book.author}`,'auction_description','',''));
+    auctionContainer
+        .appendChild(
+            newElement('p',`The book has been published in ${book.year}, in ${book.country}`,'auction_description','',''));
+    auctionContainer
+        .appendChild(
+            newElement('p',`The book has ${book.pages} pages.`,'auction_description','',''));
     //create form if use is logged in
     if (sessionCookie())
     {
         const form = auctionContainer.appendChild(newElem('form','',''));
         const amount = form.appendChild(newElem('input','','auction_bid_amount'));
-        amount.type = 'text';
+        amount.type = 'number';
         amount.placeholder = 'Amount';
         const button = form.appendChild(newElem('input','','auction_bid_amount'));
         button.type = 'submit';

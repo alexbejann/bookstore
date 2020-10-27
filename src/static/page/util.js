@@ -41,11 +41,15 @@ export function getTokenPayload() {
 }
 
 // utility functions adds/removes CSS class 'bad' upon validation
-export function validateInputControl(element, ok) {
+export function validateInputControl(element, ok, message) {
+    const formControl = element.parentElement;
+    const span = formControl.querySelector('span');
     if (ok) {
         element.classList.remove('bad')
+        span.innerText = '';
     } else {
         element.classList.add('bad')
+        span.innerText = message;
     }
 }
 

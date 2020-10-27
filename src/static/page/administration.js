@@ -128,21 +128,20 @@ function validateForm() {
         addButton = document.getElementById('add')
 
     const
-        nameOk = nameField.value.length > 0,
-        authorOk = authorField.value.length > 0,
-        yearOk = yearField.value.length > 0,
-        priceOk = priceField.value.length > 0,
-        timeOk = timeField.value.length > 0,
-        countryOk = countryField.value.length >0,
+        nameOk = nameField.value.trim().length > 0,
+        authorOk = authorField.value.trim().length > 0,
+        yearOk = yearField.value.trim().length > 0,
+        priceOk = priceField.value.trim().length > 0,
+        timeOk = timeField.value.trim().length > 0,
+        countryOk = countryField.value.trim().length >0,
         addOk = nameOk && authorOk && yearOk && priceOk
     // provide visual feedback for controls in a 'bad' state
-    validateInputControl(nameField, nameOk)
-    validateInputControl(authorField, authorOk)
-    validateInputControl(yearField, yearOk)
-    validateInputControl(priceField, priceOk)
-    validateInputControl(timeField, timeOk)
-    validateInputControl(countryField, countryOk)
-    validateInputControl(addButton, addOk)
+    validateInputControl(nameField, nameOk, 'Name field is required!')
+    validateInputControl(authorField, authorOk, 'Author field is required!')
+    validateInputControl(yearField, yearOk, 'Year field is required!')
+    validateInputControl(priceField, priceOk, 'Price field is required!')
+    validateInputControl(timeField, timeOk, 'Time field is required!')
+    validateInputControl(countryField, countryOk, 'Country field is required!')
     // enable/disable click
     addButton.disabled = !addOk
 }
@@ -160,10 +159,14 @@ function createForm()
     form.appendChild(newElem('h1','Add book','auction_title'));
     form.appendChild(createInputField('name_field','text','Name','name'));
     form.appendChild(createInputField('author_field','text','Author','author'));
-    form.appendChild(createInputField('year_field','text','Year','year'));
-    form.appendChild(createInputField('price_field','text','Price','price'));
-    form.appendChild(createInputField('time_field','text','End time','end_time'));
+    form.appendChild(createInputField('year_field','number','Year','year'));
+    form.appendChild(createInputField('price_field','number','Price','price'));
+    form.appendChild(createInputField('time_field','time','End time','end_time'));
     form.appendChild(createInputField('country_field','text','Country','country'));
+    const formControl = document.createElement('div');
+    formControl.className = 'form-control';
+    formControl.appendChild(document.createElement('span'));
+    form.appendChild(formControl);
     form.addEventListener('input', validateForm);
     // add button
     const submit = document.createElement('input');
@@ -206,10 +209,14 @@ function createForm()
 
 function createInputField(id, type, placeholder, name)
 {
+    const formControl = document.createElement('div');
+    formControl.className = 'form-control';
     const inputField = document.createElement('input');
+    formControl.appendChild(inputField);
+    formControl.appendChild(document.createElement('span'));
     inputField.type = type;
     inputField.placeholder = placeholder;
     inputField.name = name;
     inputField.id = id;
-    return inputField;
+    return formControl;
 }

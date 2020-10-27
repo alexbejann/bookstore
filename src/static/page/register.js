@@ -22,7 +22,7 @@ registerButton.addEventListener('click', event => {
     sendJSON({ method: 'POST', url: '/users', body }, (err, response) => {
         // if err is undefined, the send operation was a success
         if (!err) {
-            alert('You\'re ready to log in')
+            alert('Account created!')
             console.log(response);
         } else {
             alert(err);
@@ -34,20 +34,21 @@ registerButton.addEventListener('click', event => {
 // validate login form
 function validateForm() {
     const
-        passRegex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})$/,
+        //Minimum 6 characters, one lowercase, one uppercase and one digit
+        passRegex =  /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]){6,}/,
+        // anything@anything.(com || nl)
         emailRegex = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.(com|nl)/,
-        usernameOk = usernameField.value.length > 0,
-        emailOk = emailRegex.test(emailField.value),
-        passwordOk = passRegex.test(passwordField.value),
-        passwordRepeatOK = passwordField.value === passwordRepeatField.value,
+        usernameOk = usernameField.value.trim().length > 0,
+        emailOk = emailRegex.test(emailField.value.trim()),
+        passwordOk = passRegex.test(passwordField.value.trim()),
+        passwordRepeatOK = passwordField.value.trim() === passwordRepeatField.value.trim(),
         registerOk = usernameOk && emailOk &&passwordOk && passwordRepeatOK;
-    console.log(passwordRepeatOK,passwordOk)
+
     // provide visual feedback for controls in a 'bad' state
-    validateInputControl(usernameField, usernameOk)
-    validateInputControl(emailField, emailOk)
-    validateInputControl(passwordField, passwordOk)
-    validateInputControl(passwordRepeatField, passwordRepeatOK)
-    validateInputControl(registerButton, registerOk)
+    validateInputControl(usernameField, usernameOk, 'Username field is required!')
+    validateInputControl(emailField, emailOk, 'Email must be like: anything@anything.com/nl')
+    validateInputControl(passwordField, passwordOk,'Password must be at least 6 characters long, one digit, one upper and lower case!')
+    validateInputControl(passwordRepeatField, passwordRepeatOK, 'Password field doesn\'t match!')
     // enable/disable click of login button
     registerButton.disabled = !registerOk
 }

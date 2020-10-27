@@ -32,13 +32,12 @@ loginButton.addEventListener('click', event => {
 // validate login form
 function validateForm() {
     const
-        usernameOk = usernameField.value.length > 0,
-        passwordOk = passwordField.value.length > 0,
+        usernameOk = usernameField.value.trim().length > 0,
+        passwordOk = passwordField.value.trim().length > 0,
         loginOk = usernameOk && passwordOk
     // provide visual feedback for controls in a 'bad' state
-    validateInputControl(usernameField, usernameOk)
-    validateInputControl(passwordField, passwordOk)
-    validateInputControl(loginButton, loginOk)
+    validateInputControl(usernameField, usernameOk, 'Username field is required!')
+    validateInputControl(passwordField, passwordOk, 'Password field is required!')
     // enable/disable click of login button
     loginButton.disabled = !loginOk
 }
