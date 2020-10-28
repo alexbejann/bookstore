@@ -86,7 +86,7 @@ Content-Type: application/json
 ### get bids for user 404 unauth
 
 GET http://localhost:3000/bids
-Accept: application/json
+Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
@@ -97,11 +97,11 @@ Authorization: Bearer {{token}}
 ### post bid
 
 GET http://localhost:3000/bids
-Accept: application/json
+Content-Type: application/json
 
 {
-"username": "alex",
-"amount": "12"
+   "username": "alex",
+    "amount": "12"
 }
 
 ### bad post bid

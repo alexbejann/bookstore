@@ -20,23 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67c5b057-5df1-48d4-979b-19248c488fab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/books.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/isAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/isAdmin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/isAuthenticated.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/isAuthenticated.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/tokenValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/tokenValidation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/errorHandlers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rest/requests.rest" beforeDir="false" afterPath="$PROJECT_DIR$/src/rest/requests.rest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rest/userCalls.rest" beforeDir="false" afterPath="$PROJECT_DIR$/src/rest/userCalls.rest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/page/administration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/administration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/page/auction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/auction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/page/bids.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/bids.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/page/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/page/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/page/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/util.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/public/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/public/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -809,7 +793,7 @@
       <workItem from="1602411881693" duration="34932000" />
       <workItem from="1602944401249" duration="21805000" />
       <workItem from="1603354018663" duration="1213000" />
-      <workItem from="1603477713219" duration="66359000" />
+      <workItem from="1603477713219" duration="67012000" />
     </task>
     <task id="LOCAL-00001" summary="Added nodemon mac compat">
       <created>1599571031310</created>
@@ -972,7 +956,21 @@
       <option name="project" value="LOCAL" />
       <updated>1603889828916</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="added comments and restcalls in rest files">
+      <created>1603915284704</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1603915284704</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fixed small bugs in rest files">
+      <created>1603915417394</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1603915417394</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1014,7 +1012,9 @@
     <MESSAGE value="changed data, and return for bids" />
     <MESSAGE value="small bug fix" />
     <MESSAGE value="added error and rest call" />
-    <option name="LAST_COMMIT_MESSAGE" value="added error and rest call" />
+    <MESSAGE value="added comments and restcalls in rest files" />
+    <MESSAGE value="fixed small bugs in rest files" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed small bugs in rest files" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600774801079">
@@ -1029,11 +1029,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="83" key="#dev/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1600774824256" />
-    <state x="2395" y="80" width="926" height="837" key="CommitChangelistDialog2" timestamp="1603889828370">
+    <state x="2395" y="80" width="926" height="837" key="CommitChangelistDialog2" timestamp="1603915416886">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="312" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1603885637338" />
-    <state x="2395" y="80" width="926" height="837" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603889828370" />
+    <state x="2395" y="80" width="926" height="837" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603915416886" />
     <state x="2606" y="211" key="FileChooserDialogImpl" timestamp="1602405864289">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -1072,11 +1072,11 @@
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1602151749374" />
     <state x="2266" y="72" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600612983673" />
-    <state x="2423" y="235" key="Vcs.Push.Dialog.v2" timestamp="1603889830462">
+    <state x="2423" y="235" key="Vcs.Push.Dialog.v2" timestamp="1603915418362">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="402" y="186" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1603885639130" />
-    <state x="2423" y="235" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603889830462" />
+    <state x="2423" y="235" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603915418362" />
     <state x="440" y="237" key="Vcs.Push.Dialog.v2/0.23.1680.949@0.23.1680.949" timestamp="1599571047543" />
     <state x="2588" y="95" width="583" height="849" key="find.popup" timestamp="1603639956357">
       <screen x="1920" y="0" width="1920" height="1040" />
