@@ -60,12 +60,6 @@
                   "username": "cosmin",
                   "amount": "5",
                   "time": "11:40"
-                },
-                {
-                  "id": "3",
-                  "username": "alex",
-                  "amount": "100",
-                  "time": "11:42"
                 }
               ]
     },
@@ -91,6 +85,12 @@
           "username": "susan",
           "amount": "10",
           "time": "15:29"
+        },
+        {
+          "id": "3",
+          "username": "alex",
+          "amount": "100",
+          "time": "11:42"
         }
       ]
     },

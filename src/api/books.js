@@ -245,7 +245,7 @@ router.delete('/:id/bids',isAuthenticated, (req,res) => {
 
         res
             .status(StatusCodes.OK)
-            .json({ Bids : book.bids, });
+            .json(book.bids);
 
     } else {
         res
