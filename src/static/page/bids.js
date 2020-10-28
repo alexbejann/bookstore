@@ -5,6 +5,7 @@ window.onload = (event) =>{
 
     loadNavigation('bids');
 
+    //get all bids onload
     sendJSON({ method: 'GET', url: '/books/bids' }, (err, response) => {
         // if err is undefined, the send operation was a success
         if (!err) {
@@ -18,10 +19,16 @@ window.onload = (event) =>{
 
 };
 
+//create bids table
 const createTable = (response)=>{
     for (let index=0; index < response.length; index++)
     {
         createBids(response[index]);
+    }
+    if (response.length === 0)
+    {
+        const aucContainer =document.getElementById('bids_container');
+        aucContainer.appendChild(newElement('h1','No bids yet','','',''))
     }
 }
 
@@ -32,7 +39,6 @@ const createBids = (bid)=>{
     container.appendChild(newElement('td',`${bid.title}`,'','',''));
     container.appendChild(newElement('td',`${bid.price}`,'','',''));
     container.appendChild(newElement('td',`${bid.time}`,'','',''));
-    //container.appendChild(newElement('td',`${bid.best}`,'','',''));
     // add actions
     const actionContainer = container.appendChild(newElement('td','','','',''));
     const deleteBid = actionContainer.appendChild(newElement('i','','fa fa-trash','',''));

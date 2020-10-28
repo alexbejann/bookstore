@@ -57,7 +57,7 @@ router.get('/', (req, res, next) => {
     let year = req.query.year;
     if (country != null)
     {
-        let result = books.filter(element => element.country == country);
+        let result = books.filter(element => element.country === country);
 
         res
             .status(StatusCodes.OK)
@@ -65,7 +65,7 @@ router.get('/', (req, res, next) => {
     }
     else if(author != null)
     {
-        let result = books.filter(element => element.author == author);
+        let result = books.filter(element => element.author === author);
         console.log(author.trim());
         res
             .status(StatusCodes.OK)
@@ -73,7 +73,7 @@ router.get('/', (req, res, next) => {
     }
     else if (year != null)
     {
-        let result = books.filter(element => element.year == year);
+        let result = books.filter(element => element.year === year);
 
         res
             .status(StatusCodes.OK)
@@ -107,6 +107,7 @@ router.get('/:id', (req,res) => {
 
 // Return bids of a book
 router.get('/:id/bids', (req,res) => {
+    //search for book in list
     let book =  (books).find(book => book.id === req.params.id);
     if (book != null)
     {
@@ -124,11 +125,12 @@ router.get('/:id/bids', (req,res) => {
 router.post('/:id/bids',isAuthenticated, (req,res) => {
 
     console.log('Do post id/bids')
-
+    //search for book
     let book =  (books).find(book => book.id === req.params.id);
     if (book)
     {
         const date = new Date();
+        //push bid to book.bids
         book.bids.push({
                         "id":""+Math.floor(Math.random() * 110000)+1,
                         "username": `${req.body.username}`,
@@ -152,6 +154,7 @@ router.put('/:id', isAuthenticated, isAdmin,(req,res) => {
 
     console.log('Updating book....'+req.params.id)
     let book =  (books).find(book => book.id === req.params.id);
+    //get changed fields
     const changes = req.body.changes;
 
     if (book)
@@ -160,11 +163,11 @@ router.put('/:id', isAuthenticated, isAdmin,(req,res) => {
         for (let index  = 0; index < changes.length ; index++)
         {
             const fieldChanged = changes[index].fieldChanged,
-                newValue = changes[index].newValue;
+                  newValue = changes[index].newValue;
             console.log(fieldChanged, newValue);
+            //check which field have been changed and change value
             if ("title" === fieldChanged)
             {
-
                 book.title =  newValue;
             }
             else if ("author" === fieldChanged)
@@ -185,7 +188,6 @@ router.put('/:id', isAuthenticated, isAdmin,(req,res) => {
             }
         }
         console.log(book);
-
     }
     else
     {
@@ -201,6 +203,7 @@ router.post('/', isAuthenticated, isAdmin,(req,res) => {
 
     console.log('Creating new book')
 
+    //init fields
     const title = req.body.name,
           author = req.body.author,
           year = req.body.year,
@@ -208,10 +211,11 @@ router.post('/', isAuthenticated, isAdmin,(req,res) => {
           time = req.body.time,
           country = req.body.country;
 
+    //check if book exist
     const exist =  books.find(book => book.title === title);
     if (!exist)
     {
-
+        //push book to books array
         books.push({
             "id":""+Math.floor(Math.random() * 110000)+1,
             "author": author,
@@ -241,13 +245,15 @@ router.delete('/:id/bids',isAuthenticated, (req,res) => {
     console.log('Deleting bid from book...',req.params.id, req.query.id)
 
     let book =  (books).find(book => book.id === req.params.id);
+    // get bid id
     let bid_ID  = req.query.id;
     if (book != null && bid_ID != null)
     {
-        let bid = book.bids.find(element => element.id == bid_ID);
+        //find bid
+        let bid = book.bids.find(element => element.id === bid_ID);
 
         console.log('Bid to be deleted:',bid)
-
+        //delete bid
         book.bids.splice(book.bids.indexOf(bid), 1);
         console.log('Bid:',bid)
 

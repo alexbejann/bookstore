@@ -5,6 +5,7 @@ Content-Type: application/json
   "username": "alex",
   "password": "pass123"
 }
+### login ok
 
 > {%
 client.global.set("token",response.body.token)
@@ -18,17 +19,44 @@ Authorization: Bearer {{token}}
 
 ### Authorization
 
+GET http://localhost:3000/users
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### all users user is admin
+
+GET http://localhost:3000/users
+Content-Type: application/json
+
+### bad all users user is not auth admin
+
+GET http://localhost:3000/auth
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### bad Authorization
+
 GET http://localhost:3000/bids
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 ### bids for a user
 
+GET http://localhost:3000/bids
+Content-Type: application/json
+
+### bad bids for a user
+
 DELETE http://localhost:3000/auth
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 ### Logout
+
+DELETE http://localhost:3000/auth
+Content-Type: application/json
+
+### bad Logout
 
 POST http://localhost:3000/auth
 Content-Type: application/json
@@ -56,3 +84,23 @@ Content-Type: application/json
   "password": "pistol"
 }
 ### User register done Status code:201 (created)
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "Nick",
+  "password": "pistol"
+}
+### User register done Status code:201 (created)
+
+
+> {%
+client.global.set("token",response.body.token)
+%}
+
+GET http://localhost:3000/users
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### bad all users user is not admin

@@ -27,6 +27,10 @@ const login = (username, password)=>{
     return false;
 }
 
+//encrypt password with bcrypt
+const encryptedPassword = (password) =>{
+    return bcrypt.hashSync(password, saltRounds);
+};
 // User login
 user_router.post('/auth', (req, res, next) => {
     try {
@@ -46,7 +50,7 @@ user_router.post('/auth', (req, res, next) => {
         {
                res
                    .status(StatusCodes.NOT_FOUND)
-                   .json({message: "Username or password are incorrect!"});
+                   .json({Error: "Username or password are incorrect!"});
         }
       
     } catch (error) {
@@ -54,20 +58,18 @@ user_router.post('/auth', (req, res, next) => {
     } 
 });
 
-const encryptedPassword = (password) =>{
-    return bcrypt.hashSync(password, saltRounds);
-};
-
 // User register, user is the resource => post to user || create the user
 user_router.post('/users', (req, res, next) => {
       try {
         console.log('Registering user...')
         let username = req.body.username;
 
+        //encrypt password
         const password = encryptedPassword(req.body.password || '');
 
         const email = req.body.email || '';
 
+        //check if the user exists
         const element = users.find(user => user.username === username
                                               && user.email === email);
 
@@ -90,7 +92,7 @@ user_router.post('/users', (req, res, next) => {
          {
              res
                  .status(StatusCodes.CONFLICT)
-                 .json({message: `${username}, already exists!`})
+                 .json({Error: `${username}, already exists!`})
          }
       } catch (error) {
         next(error);
@@ -108,16 +110,22 @@ user_router.get('/users',isAuthenticated, isAdmin,(req, res) =>{
 });
 
 //logout delete and change secret for user
-user_router.delete('/auth',isAuthenticated, (req, res)=>{
-
-    const user = users
-                .find(element => element.username === req.tokenPayload.username);
-    if (user)
+user_router.delete('/auth',isAuthenticated, (req, res,next)=>{
+    try
     {
-        user.secret = uuidv4();
-        res
-            .status(StatusCodes.OK)
-            .send({msg:'Logged out!'})
+        const user = users
+            .find(element => element.username === req.tokenPayload.username);
+        if (user)
+        {
+            user.secret = uuidv4();
+            res
+                .status(StatusCodes.OK)
+                .send({msg:'Logged out!'})
+        }
+    }
+    catch (e)
+    {
+        next(e);
     }
 });
 

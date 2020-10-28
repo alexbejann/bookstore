@@ -4,7 +4,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const app = express();
 
-const middlewares = require('./middlewares');
+const middlewares = require('./errorHandlers');
 const books = require('./api/books');
 const { user_router } = require('./api/user');
 
@@ -16,11 +16,11 @@ app.use(helmet());
 // Use morgan for common logs
 app.use(morgan('common'));
 
-// Allow requests only from this origin
+// Allow requests only from this origin and add headers
 app.use(cors({
     origin: 'http://localhost:5000',
 }));
-
+// User json
 app.use(express.json());
 
 app.get("/", (req, res) =>{
@@ -33,7 +33,7 @@ app.use('/books', books); // Process books router
 
 app.use('/', user_router ); // Processes multiple requests
 
-
+//If we couldn't find any route the request will end you here
 app.use(middlewares.notFound);
 
 app.use(middlewares.errorHandler);

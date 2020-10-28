@@ -27,14 +27,14 @@ function createCookie(token){
 
 // reset token
 function resetToken() {
-    // clear token when users logs out
+    // clear token when user logs out
     document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
 
 export function getTokenPayload() {
     const cookie = sessionCookie();
     if (cookie) {
-        // extract JSON payload from token string
+        // extract JSON payload from token
         return JSON.parse(atob(sessionCookie().split('.')[1]))
     }
     return undefined
@@ -73,7 +73,7 @@ export function newElem(tagName, textContext, className)
     return nTag;
 }
 
-// check of cookie exists
+// check if cookie exists
 export function sessionCookie()
 {
     let end;
@@ -110,7 +110,7 @@ export function hideElement(element)
     }
 }
 
-// load NAV bar todo this should be replaced with a better approach
+// load NAV bar
 export function loadNavigation(active)
 {
     // if cookie exists hide login button
@@ -121,13 +121,13 @@ export function loadNavigation(active)
     const home = nav.appendChild(newElem('a','Home',
                         active === 'home' ? 'active' : '' ));
     home.href = 'index.html';
-
+    //if user is logged in
     if (cookie)
     {
         const bids = nav.appendChild(newElem('a','My Bids',
                             active === 'bids' ? 'active' : '' ));
         bids.href = 'bids.html';
-
+        //check if user is admin
         if (payload.roles[0] === 'admin')
         {
             const administration = nav.appendChild(newElem('a','Administration',

@@ -15,6 +15,7 @@ window.onload = (event) =>{
     })
 };
 
+//create users table
 const createUsersTable= (response) =>{
     for (let index=0; index < response.length; index++)
     {
@@ -22,9 +23,12 @@ const createUsersTable= (response) =>{
     }
 }
 
+//create user row
 const createUserElement= (user)=>{
+    //get containers
     const aucContainer =document.querySelector('main table');
     const container = aucContainer.appendChild(newElement('tr','','','',''));
+
     container.appendChild(newElement('td',`${user.username}`,'','',`${user.id}`));
     container.appendChild(newElement('td',`${user.email}`,'','',''));
     container.appendChild(newElement('td',`${user.roles}`,'','',''));

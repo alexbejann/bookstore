@@ -2,10 +2,11 @@ const { StatusCodes }= require('http-status-codes');
 
 const { getToken, isTokenValid } = require('./tokenValidation');
 
+//check if user is authenticated
 const isAuthenticated = (req,res,next)=>{
 
     const token = getToken(req);
-
+    //check if token is valid
     const payload = isTokenValid(token);
 
     if (payload)

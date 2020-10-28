@@ -1,7 +1,7 @@
 // import utilities from util.js
 import {sendJSON, loadNavigation, newElement, newElem, sessionCookie, getTokenPayload} from './util.js'
 
-// on page load get all the books
+// on page load get book
 window.onload = (event) =>{
 
     loadNavigation('home');
@@ -15,7 +15,7 @@ const searchParams = ()=>{
     let params = new URLSearchParams(url.search);
   return params.get('id');
 };
-
+//query book info
 function queryBook(id)
 {
     sendJSON({ method: 'GET', url: '/books/'+id }, (err, response) => {

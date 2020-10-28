@@ -1,5 +1,5 @@
 // import utilities from util.js
-import {sendJSON, validateInputControl, loadNavigation, newElement, newElem, saveToken} from './util.js'
+import {sendJSON, validateInputControl, loadNavigation, newElement, newElem} from './util.js'
 
 // on page load get all the bids and hide nav
 window.onload = (event) =>{
@@ -25,7 +25,9 @@ const createAuctionTable = (response) =>{
     {
         createAuctionElement(response[index]);
     }
+    //create add book form
     createForm();
+    //validate form
     validateForm()
 }
 // create auction element
@@ -44,7 +46,7 @@ const createAuctionElement = (book)=>{
     const bookValues = [book.title, book.author, book.year, book.price, book.time]
     edit.addEventListener('click', event =>{
         event.preventDefault();
-
+        //hide delete and edit buttons
         deleteBook.style.display = "none";
         edit.style.display = "none";
         for (let index = 0; index < 5; index++)
@@ -112,7 +114,7 @@ function update(child)
         //Get contents off cell clicked
         let content = child.firstChild.nodeValue;
         //Switch to text input field
-        child.innerHTML = "<input type = 'text' name = 'txtNewInput' id = 'txtNewInput' value = '" + content + "'/>";
+        child.innerHTML = "<input type = 'text' value = '" + content + "'/>";
     }
 }
 // validate login form
@@ -207,6 +209,7 @@ function createForm()
     form.appendChild(submit);
 }
 
+//create input field
 function createInputField(id, type, placeholder, name)
 {
     const formControl = document.createElement('div');

@@ -12,10 +12,12 @@ const getToken = (req)=>{
 const isTokenValid = (token) => {
 
     const tokenPayload = jwt.decode(token);
+    //search for user
     const user = users.find(element => element.username === tokenPayload.username);
 
     if (user)
     {
+        //verify jwt
         try{
             return jwt.verify(token, user.secret);
         } catch (e) {
