@@ -18,6 +18,18 @@ Authorization: Bearer {{token}}
 
 ### Authorization
 
+GET http://localhost:3000/bids
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### bids for a user
+
+DELETE http://localhost:3000/auth
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### Logout
+
 POST http://localhost:3000/auth
 Content-Type: application/json
 

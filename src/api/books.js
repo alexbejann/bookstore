@@ -154,38 +154,46 @@ router.put('/:id', isAuthenticated, isAdmin,(req,res) => {
     let book =  (books).find(book => book.id === req.params.id);
     const changes = req.body.changes;
 
-    console.log("This should be changed "+changes,req.body.changes[0]);
-    for (let index  = 0; index < changes.length ; index++)
+    if (book)
     {
-        const fieldChanged = changes[index].fieldChanged,
-            newValue = changes[index].newValue;
-        console.log(fieldChanged, newValue);
-        if ("title" === fieldChanged)
+        console.log("This should be changed "+changes,req.body.changes[0]);
+        for (let index  = 0; index < changes.length ; index++)
         {
+            const fieldChanged = changes[index].fieldChanged,
+                newValue = changes[index].newValue;
+            console.log(fieldChanged, newValue);
+            if ("title" === fieldChanged)
+            {
 
-            book.title =  newValue;
+                book.title =  newValue;
+            }
+            else if ("author" === fieldChanged)
+            {
+                book.author =  newValue;
+            }
+            else if ("year" === fieldChanged)
+            {
+                book.year =  newValue;
+            }
+            else if ("price" === fieldChanged)
+            {
+                book.price = newValue;
+            }
+            else if ("time" === fieldChanged)
+            {
+                book.time =  newValue;
+            }
         }
-        else if ("author" === fieldChanged)
-        {
-            book.author =  newValue;
-        }
-        else if ("year" === fieldChanged)
-        {
-            book.year =  newValue;
-        }
-        else if ("price" === fieldChanged)
-        {
-            book.price = newValue;
-        }
-        else if ("time" === fieldChanged)
-        {
-            book.time =  newValue;
-        }
+        console.log(book);
+
     }
-    console.log(book);
-    res
-        .status(StatusCodes.OK)
-        .send(book);
+    else
+    {
+        res
+            .status(StatusCodes.NOT_FOUND)
+            .send({"Error":"Book doesn't exist!"});
+    }
+
 })
 
 //Post new book
