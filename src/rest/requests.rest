@@ -33,6 +33,7 @@ Accept: application/json
 PUT http://localhost:3000/books/id
 Content-Type: application/json
 Authorization: Bearer {{token}}
+
 {
   "title": "Harry Potter",
   "pages": "20"
@@ -87,9 +88,10 @@ Content-Type: application/json
 GET http://localhost:3000/bids
 Accept: application/json
 Authorization: Bearer {{token}}
+
 {
-username: alex,
-amount: 12
+   "username": "alex",
+    "amount": "12"
 }
 
 ### post bid
@@ -98,8 +100,8 @@ GET http://localhost:3000/bids
 Accept: application/json
 
 {
-username: alex,
-amount: 12
+"username": "alex",
+"amount": "12"
 }
 
 ### bad post bid
@@ -122,6 +124,7 @@ Accept: application/json
 
 POST http://localhost:3000/books/1/bids
 Content-Type: application/json
+
 {
     "username": "Jason",
     "amount": "5"
@@ -131,6 +134,7 @@ Content-Type: application/json
 POST http://localhost:3000/books/1/bids
 Content-Type: application/json
 Authorization: Bearer {{token}}
+
 {
     "username": "Jason",
     "amount": "5"
