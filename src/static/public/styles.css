@@ -96,12 +96,41 @@ header .banner_image {
     }
 }
 
+.filter
+{
+    float: left;
+}
+.filter_title {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 5px 5px;
+}
+.option-container
+{
+    padding: 0;
+}
+.trigger{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 1.6;
+    display: block;
+    color: #000;
+    padding: 5px 0 5px 10px;
+    position: relative;
+}
 .row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 85%;
+    float: right;
+}
+.filters-group
+{
+    padding-bottom: 10px;
+    margin-top: 10px;
+    padding-right: 10px;
 }
 
 .row > .auction_box {
