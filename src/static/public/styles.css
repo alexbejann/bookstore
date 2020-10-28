@@ -118,12 +118,20 @@ header .banner_image {
     padding: 5px 0 5px 10px;
     position: relative;
 }
-.row {
+.row-index {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     width: 85%;
+    float: right;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     float: right;
 }
 .filters-group
@@ -133,7 +141,7 @@ header .banner_image {
     padding-right: 10px;
 }
 
-.row > .auction_box {
+.row-index > .auction_box {
     background: white;
     margin: 1.5%;
     flex: 0 0 30%;
