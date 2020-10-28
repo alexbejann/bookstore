@@ -57,10 +57,11 @@ function createFilter(category,value, id)
         sendJSON({ method: 'GET', url: `/books/?${category}=${value}` }, (err, response) => {
             // if err is undefined, the send operation was a success
             if (!err) {
-                createBooks(response)
+                for (let i = 0; i < response.length; i++) {
+                    bookContainer.appendChild(createBook(response[i]));
+                }
             } else {
-                alert(err);
-                console.error(err);
+               console.error(err);
             }
         })
 
