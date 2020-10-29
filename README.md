@@ -1,59 +1,130 @@
 # Assignment 2
+-  **Daniel-Alexandru Bejan**
+-  **Cosmin George Mucalau**
 
-## The case
-Build an auction site for a product or service of your choosing. Some examples are
+## Books Auction Store
+To run project do `npm run dev`. This command will start the server to listen on `http://localhost:3000
+`.
+## Admin user credentials
+- username: __alex__
+- password: __pass123__
 
-- Trips
-- Sporting goods
-- Art
-
-## The assignment
-
-Now that we have a RESTful backend it is time to build a simple frontend. We will use plain vanilla Javascipt for this assignment. The use of other web technologies is not allowed. To help you along we have already created the HTML and CSS for you. Clone the project from [HBO ICT Lab](https://repo.hboictlab.nl/template/20975353) and add your own Javascript to meet the requirements below.
-
-You are not supposed to alter the provided HTML and CSS.
-
-### Functional requirements
+### Requirements accomplished
 
 - I want a main(index) page with:
 
-    - the ability to log in and register
-    - a list of auctions and their corresponding attributes with built in pagination.
-    - a searchbar that can be used to search auctions
-    - the auction list should be filterable on at least three attributes. I.e. a dropdown to filter on price ranges, checkboxed for colors or a slider for a distance.
+    -[x] the ability to log in and register
+    -[x] a list of auctions and their corresponding attributes with built in pagination.
+    -[x] a searchbar that can be used to search auctions
+    -[x] the auction list should be filterable on at least three attributes. I.e. a dropdown to filter on price ranges, checkboxed for colors or a slider for a distance.
 - I want a details page for each auction. This page should have:
-    - a list of all bids and attributes
-    - an option to place a bid
+    -[x] a list of all bids and attributes
+    -[x] an option to place a bid(user can place a bid only if it's logged in).
 - I want an adminpage where I:
-    - can add auctions
-    - can modify auctions
-    - can delete auctions
+    -[x] can add auctions
+    -[x] can modify auctions
+    -[x] can delete auctions
 - Create form handling. Form handling should have at least:
-    - A red border (CSS class wrong) around the text input when an incorrect bid was placed
-    - A red border around the price input field when an incorrect price was entered when creating a new auction
-    - An error message when trying to place a bid without being logged in
-    - An error message for login errors
-    - A check for the  email address on registration:
-        - contains a @
-        - there is text before the @
-        - there is text after the @
-        - ends with .nl or .com
-    - A check for the password at registration:
-        - at least 6 characters
-        - should contain at least one capital letter
-        - should contain at least one digit
+    -[x] A red border (CSS class wrong) around the text input when an incorrect bid was placed
+    -[x] A red border around the price input field when an incorrect price was entered when creating a new auction
+    -[x] An error message when trying to place a bid without being logged in
+    -[x] An error message for login errors
+    -[x] Email check on registration:
+        - Performed by our regex:`[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.(com|nl)`
+        - This part `[a-zA-Z0-9_.+-]` checks if a string before @
+        - This part `[a-zA-Z0-9-]+\` checks if after @  
+        - The email should end in .com or .nl (`(com|nl)`)
+    -[x] Password check regEx at registration:
+        - This is our regEx for password `(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]){6,}`.
+        - `(?=.*[a-z])` checks if the string contains at least a lowercase char.
+        - `(?=.*[A-Z])` this part checks for at least one uppercase char.
+        - `(?=.*[0-9])` this part checks if the string contains at least one digit 
+        - `{6,}` checks if the string is at least 6 char long. 
 
-### Non-functional requirements
-- Do not alter HTML and CSS
-- Do not use client-side Javascript libraries
-- Use the browsers XMLHttpRequest API to make HTTP to the backend
+## User without login
 
-## Grading
-This assignment has to be handed in on Blackboard. The ultimate deadline is
+- Can sign up
+- Filter books on main page based on Authors, Years and Country.
+- Can also view the book detail page 
 
-**monday 09:00 in week 9.**
+## Normal User
 
-What do we expect you to hand in:
+- Login logout
+- View books on main page
+    - __Add__ bid to book on detail page
+- See his own bids in bids.html
+    - __Delete__ bid 
 
-- The complete code of both the backend and frontend
-- A short manual in Markdown on how they work together
+## Admin user 
+
+- Can see all users in Users section (username, email and role)
+- Can manage all auctions in Administration section 
+    - admin can **modify**, **delete** current auctions/books
+    - can **add** a new auction/book
+
+## Project structure
+- src
+    - api
+        - books.js
+        - isAdmin.js
+        - isAuthenticated.js
+        - tokenValidation.js
+        - user.js
+    - data
+        - books.json
+        - user.json
+    - rest
+        - requests.rest
+        - userCalls.rest
+    - static
+        - page
+            - administration.js
+            - auction.js
+            - bids.js
+            - index.js
+            - login.js
+            - register.js
+            - users.js  
+            - util.js
+        - public 
+        - administration.html
+        - auction.html
+        - bids.html
+        - index.html
+        - login.html
+        - register.html
+        - users.html
+    - errorHandlers.js
+    - index.js 
+
+## Complex code from static files explained
+
+## util.js
+- Token handlers received from the server:
+    - `createCookie(token)` is creating the cookie based on the token received from the server called from `saveToken(token)`
+    - `sessionCookie()` is checking and is returning the cookie value, we are searching for our cookie based on given name in `createCookie(token)` which is always **token**.
+    - `resetToken()` deletes the cookie by setting a past date, this will trigger cookie removal
+    - `getTokenPayload()` is extracting the token payload, so we can use the payload for further checks such as: role checking or username check. 
+- Loading navigation `loadNavigation(active)` this is called on every page in the window.onload in order to load the page navigation, the active param is the current page name. This method is checking automatically(based on the cookie, if exists) what should the user see and will create and load all necessary navigation items.
+- `validateInputControl(element, ok, message)` is called when we need some error handlers in a form / input field. Our solution for error handling is to have every input field wrapped in a div which consists in input, and a span which is going to show our error message, if necessary. 
+- `sendJSON` has been modified to send an error if the status is different the `xhr.status >= 200 && xhr.status < 300`. Also, the method will add a Bearer header with a token if the session cookie is present.
+## index.js 
+- During onload function we are also creating the filters in `createBooks(response)` we have 3 arrays which will contain our values for each filter and `createFilter(category,value, id)` will take care of creating the filters and checkboxes. The idea is simple if a checked(the checkbox) we clear all children and do a request to server to get all books based on that filter.
+
+## administration.js
+- `createAuctionElement = (book)` is used to create a row for a table. At the same time we are also adding the click listeners for the edit, delete and save changes. When the edit button clicked other buttons are disabled and `update(child)` is called within a loop. This function is adding inside the **<td>** element an input element to edit the fields. When save button clicked we check for changes in this piece of code and do the put request to server. 
+`//Save changes
+            const val = [];
+
+            for (let index  = 0; index < 5 ; index++)
+            {
+                let currentChild = container.children[index];
+                if (!(currentChild.firstChild.value === bookValues[index]))
+                {
+                    //console.log(`the ${currentChild.id} have been changed: `+currentChild.firstChild.value, bookValues[index]);
+                    val.push({
+                        fieldChanged: currentChild.id,
+                        newValue: "" + currentChild.firstChild.value,
+                    })
+                }
+            }` 

@@ -35,7 +35,7 @@ export function getTokenPayload() {
     const cookie = sessionCookie();
     if (cookie) {
         // extract JSON payload from token
-        return JSON.parse(atob(sessionCookie().split('.')[1]))
+        return JSON.parse(atob(cookie.split('.')[1]))
     }
     return undefined
 }
