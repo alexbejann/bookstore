@@ -22,7 +22,6 @@
     <list default="true" id="67c5b057-5df1-48d4-979b-19248c488fab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/page/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/util.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -795,7 +794,7 @@
       <workItem from="1602411881693" duration="34932000" />
       <workItem from="1602944401249" duration="21805000" />
       <workItem from="1603354018663" duration="1213000" />
-      <workItem from="1603477713219" duration="76175000" />
+      <workItem from="1603477713219" duration="78742000" />
     </task>
     <task id="LOCAL-00001" summary="Added nodemon mac compat">
       <created>1599571031310</created>
@@ -979,7 +978,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603915918536</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Added .md documentation">
+      <created>1603969137705</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1603969137705</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -998,7 +1004,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed unused dependencies and fixed params json" />
     <MESSAGE value="Implemented other routers" />
     <MESSAGE value="Finished tokens and encryption" />
     <MESSAGE value="Linked front-end with backend" />
@@ -1023,7 +1028,8 @@
     <MESSAGE value="added comments and restcalls in rest files" />
     <MESSAGE value="fixed small bugs in rest files" />
     <MESSAGE value="small bug in rest calls" />
-    <option name="LAST_COMMIT_MESSAGE" value="small bug in rest calls" />
+    <MESSAGE value="Added .md documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added .md documentation" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603959833588">
@@ -1038,10 +1044,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="83" key="#dev/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1600774824256" />
-    <state x="2395" y="80" width="926" height="837" key="CommitChangelistDialog2" timestamp="1603915918033">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="312" y="0" width="926" height="837" key="CommitChangelistDialog2" timestamp="1603969137154">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="312" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1603885637338" />
+    <state x="312" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1603969137154" />
     <state x="2395" y="80" width="926" height="837" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603915918033" />
     <state x="2606" y="211" key="FileChooserDialogImpl" timestamp="1602405864289">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -1081,10 +1087,10 @@
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1602151749374" />
     <state x="2266" y="72" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600612983673" />
-    <state x="2423" y="235" key="Vcs.Push.Dialog.v2" timestamp="1603915919804">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="402" y="186" key="Vcs.Push.Dialog.v2" timestamp="1603969151856">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="402" y="186" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1603885639130" />
+    <state x="402" y="186" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1603969151856" />
     <state x="2423" y="235" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603915919804" />
     <state x="440" y="237" key="Vcs.Push.Dialog.v2/0.23.1680.949@0.23.1680.949" timestamp="1599571047543" />
     <state x="2588" y="95" width="583" height="849" key="find.popup" timestamp="1603639956357">

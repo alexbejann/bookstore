@@ -102,29 +102,114 @@ To run project do `npm run dev`. This command will start the server to listen on
 ## util.js
 - Token handlers received from the server:
     - `createCookie(token)` is creating the cookie based on the token received from the server called from `saveToken(token)`
+        ```
+        // create cookie
+        function createCookie(token){
+            document.cookie = "token=" + token + ";samesite=strict;";
+        }
+        ```
     - `sessionCookie()` is checking and is returning the cookie value, we are searching for our cookie based on given name in `createCookie(token)` which is always **token**.
-    - `resetToken()` deletes the cookie by setting a past date, this will trigger cookie removal
-    - `getTokenPayload()` is extracting the token payload, so we can use the payload for further checks such as: role checking or username check. 
+    - `resetToken()` deletes the cookie by setting a past date, this will trigger cookie removal 
+        ```
+        // reset token
+           function resetToken() {
+               // clear token when user logs out
+               document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+           }
+        ```
+    - `getTokenPayload()` is extracting the token payload, so we can use the payload for further checks such as: role checking or username check.
+      ```
+        export function getTokenPayload() {
+            const cookie = sessionCookie();
+            if (cookie) {
+                // extract JSON payload from token
+                return JSON.parse(atob(cookie.split('.')[1]))
+            }
+            return undefined
+        }
+      ```
 - Loading navigation `loadNavigation(active)` this is called on every page in the window.onload in order to load the page navigation, the active param is the current page name. This method is checking automatically(based on the cookie, if exists) what should the user see and will create and load all necessary navigation items.
-- `validateInputControl(element, ok, message)` is called when we need some error handlers in a form / input field. Our solution for error handling is to have every input field wrapped in a div which consists in input, and a span which is going to show our error message, if necessary. 
+- `validateInputControl(element, ok, message)` is called when we need some error handlers in a form / input field. Our solution for error handling is to have every input field wrapped in a div which consists in input, and a span which is going to show our error message, if necessary.
+
+```
+// utility functions adds/removes CSS class 'bad' upon validation
+export function validateInputControl(element, ok, message) {
+    const formControl = element.parentElement;
+    const span = formControl.querySelector('span');
+    if (ok) {
+        element.classList.remove('bad')
+        span.innerText = '';
+    } else {
+        element.classList.add('bad')
+        span.innerText = message;
+    }
+}
+```
+
 - `sendJSON` has been modified to send an error if the status is different the `xhr.status >= 200 && xhr.status < 300`. Also, the method will add a Bearer header with a token if the session cookie is present.
 ## index.js 
 - During onload function we are also creating the filters in `createBooks(response)` we have 3 arrays which will contain our values for each filter and `createFilter(category,value, id)` will take care of creating the filters and checkboxes. The idea is simple if a checked(the checkbox) we clear all children and do a request to server to get all books based on that filter.
 
+```
+function createBooks(response)
+{
+    const container = document.getElementById('book-container');
+    //used for filtering
+    let authors = [];
+    let years = [];
+    let countries = [];
+    for (let index = 0; index < response.length; index++)
+    {
+        let book = response[index];
+        //create books and append to parent
+        container.appendChild(createBook(book));
+        //add filter values
+        if (!authors.includes(book.author))
+        {
+            authors.push(book.author)
+        }
+        if (!years.includes(book.year))
+        {
+            years.push(book.year)
+        }
+        if (!countries.includes(book.country))
+        {
+            countries.push(book.country)
+        }
+    }
+
+ // create filters
+    for (let i = 0; i < authors.length; i++)
+    {
+        createFilter('author',authors[i], 'author-cont')
+    }
+    for (let i = 0; i < years.length; i++)
+    {
+        createFilter('year',years[i], 'year-cont')
+    }
+    for (let i = 0; i < countries.length; i++)
+    {
+        createFilter('country',countries[i], 'country-cont')
+    }
+```
+
 ## administration.js
 - `createAuctionElement = (book)` is used to create a row for a table. At the same time we are also adding the click listeners for the edit, delete and save changes. When the edit button clicked other buttons are disabled and `update(child)` is called within a loop. This function is adding inside the **<td>** element an input element to edit the fields. When save button clicked we check for changes in this piece of code and do the put request to server. 
-`//Save changes
-            const val = [];
 
-            for (let index  = 0; index < 5 ; index++)
-            {
-                let currentChild = container.children[index];
-                if (!(currentChild.firstChild.value === bookValues[index]))
-                {
-                    //console.log(`the ${currentChild.id} have been changed: `+currentChild.firstChild.value, bookValues[index]);
-                    val.push({
-                        fieldChanged: currentChild.id,
-                        newValue: "" + currentChild.firstChild.value,
-                    })
-                }
-            }` 
+```
+//Save changes
+    const val = [];
+    for (let index  = 0; index < 5 ; index++)
+    {
+        let currentChild = container.children[index];
+        if (!(currentChild.firstChild.value === bookValues[index]))
+        {
+            //console.log(`the ${currentChild.id} have been changed: `+currentChild.firstChild.value, bookValues[index]);
+            val.push({
+                fieldChanged: currentChild.id,
+                newValue: "" + currentChild.firstChild.value,
+            })
+        }
+    }
+const body = {changes: val};
+``` 
