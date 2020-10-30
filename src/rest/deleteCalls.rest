@@ -1,0 +1,40 @@
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+> {%client.global.set("token",response.body.token);%}
+### login ok
+
+
+### User login Status code:200
+
+DELETE http://localhost:3000/auth
+Accept: application/json
+Authorization: Bearer {{token}}
+
+### Delete bid
+
+DELETE http://localhost:3000/books/1/bids?id=3
+Accept: application/json
+Authorization: Bearer {{token}}
+
+### Delete bid
+
+DELETE http://localhost:3000/books/1/bids?id=3
+Accept: application/json
+
+### bad Delete bid
+
+DELETE http://localhost:3000/books/3
+Accept: application/json
+Authorization: Bearer {{token}}
+### Admin delete book 200
+
+DELETE http://localhost:3000/books/3
+Accept: application/json
+
+### bad unauthAdmin delete book

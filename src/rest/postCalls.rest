@@ -1,0 +1,97 @@
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+> {%client.global.set("token",response.body.token)%}
+### login ok
+
+### User login Status code:200
+
+PUT http://localhost:3000/books/2
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Harry Potter"
+}
+### Admin update book Status code:200
+
+PUT http://localhost:3000/books/1
+Content-Type: application/json
+
+{
+  "title": "Harry Potter"
+}
+### Admin update book Status code:404 unauth
+
+POST http://localhost:3000/books
+Content-Type: application/json
+
+{
+  "author": "Chinua Achebe",
+  "country": "UK",
+  "pages": 209,
+  "title": "The Big Brother",
+  "year": 1958
+}
+### Administrator add auction Status code:404 UNAUTHORIZED
+
+POST http://localhost:3000/books
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "author": "Chinua Achebe",
+  "country": "UK",
+  "pages": 209,
+  "title": "The Big Brother",
+  "year": 1958
+}
+### Administrator add auction Status code:201 (created)
+
+POST http://localhost:3000/books
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "author": "Chinua Achebe",
+  "country": "UK",
+  "pages": 209,
+  "title": "The Big Brother",
+  "year": 1958
+}
+### Administrator add auction book exists (created)
+
+
+POST http://localhost:3000/books/1/bids
+Content-Type: application/json
+
+{
+  "username": "Jason",
+  "amount": "5"
+}
+### Add bid Status code:404 not authorized
+
+POST http://localhost:3000/books/1/bids
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "username": "jaaoh",
+  "amount": "5"
+}
+### bad Add bid Status
+
+POST http://localhost:3000/books/1/bids
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "username": "alex",
+  "amount": "5"
+}
+### Add bid Status code:201 (created)

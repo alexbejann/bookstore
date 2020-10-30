@@ -9,7 +9,7 @@
     "lint": "eslint src/"
   },
   "keywords": [],
-  "author": "",
+  "author": "Daniel-Alexandru Bejan, Cosmin George Mucalau",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",

@@ -20,7 +20,7 @@ app.use(morgan('common'));
 app.use(cors({
     origin: 'http://localhost:5000',
 }));
-// User json
+// Use json
 app.use(express.json());
 
 app.get("/", (req, res) =>{

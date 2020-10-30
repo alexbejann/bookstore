@@ -12,7 +12,6 @@ To run project do `npm run dev`. This command will start the server to listen on
 ### Requirements accomplished
 
 - I want a main(index) page with:
-
     -[x] the ability to log in and register
     -[x] a list of auctions and their corresponding attributes with built in pagination.
     -[x] a searchbar that can be used to search auctions

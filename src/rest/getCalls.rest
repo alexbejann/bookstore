@@ -1,0 +1,90 @@
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+> {%client.global.set("token",response.body.token)%}
+
+### login ok
+
+### User login Status code:200
+
+GET http://localhost:3000/books/bids
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### get bids for user 200
+
+GET http://localhost:3000/books/bids
+Content-Type: application/json
+
+### get bids for user 404 unauth
+
+GET http://localhost:3000/books/bids
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### get bid
+
+GET http://localhost:3000/books/bids
+Content-Type: application/json
+
+### bad bids 404 UNAUTH
+
+GET http://localhost:3000/books/?year=1979
+Accept: application/json
+
+### All books with publisher Status code:200
+
+GET http://localhost:3000/books/?year=2077
+Accept: application/json
+
+### All books with publisher Status code:200
+
+GET http://localhost:3000/books/?author=Hans Christian Andersen
+Accept: application/json
+
+### All books author J.K. Status code:200
+
+GET http://localhost:3000/books/?author=Alexandru
+Accept: application/json
+
+### All books author Alexandru Status code:200
+
+GET http://localhost:3000/books/?country=Denmark
+Content-Type: application/json
+
+### All books type adventures Status code: 200
+
+GET http://localhost:3000/books/?country=Romania
+Content-Type: application/json
+
+### All books from Romania Status code: 404
+
+GET http://localhost:3000/books
+Accept: application/json
+
+### Retrieve all books Status code: 200
+
+GET http://localhost:3000/books/1/bids
+Accept: application/json
+
+### Retrieve all bids for a specific book Status code:200
+
+GET http://localhost:3000/books/100/bids
+Accept: application/json
+
+### Retrieve all bids for a specific book, book doesn't exists Status code:404
+
+GET http://localhost:3000/books/1
+Accept: application/json
+
+### Retrieve a book Status code: 200
+
+GET http://localhost:3000/books/10012
+Accept: application/json
+
+### Book doesn't exists Status code: 404

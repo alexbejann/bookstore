@@ -20,8 +20,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67c5b057-5df1-48d4-979b-19248c488fab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README-BACKEND.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rest/deleteCalls.rest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rest/postCalls.rest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-15T050903.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-15T050954.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-15T051523.201.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-15T051716.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-15T051721.404.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-15T051726.400.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-15T051730.201.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-15T051749.201.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-15T052911.201.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-15T053304.201.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-15T053608.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-15T053710.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T030858.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T032634.201.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T035254.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T035506.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T035530.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T035726.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T035803.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T041851.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T042244.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T042258.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T053746.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T054636.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T054643.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T054649.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T054724.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T054728.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T054753.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T054757.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T061038.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2020-09-22T061042.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rest/requests.rest" beforeDir="false" afterPath="$PROJECT_DIR$/src/rest/getCalls.rest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/page/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/page/login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +119,715 @@
     <option name="REQUEST_HISTORY">
       <list>
         <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/books/bids" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjEzMjJ9.lKoJjdsF50VaSZQXsKk1h_03LAZT6MDbwZX8qco8Vp4" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;   &quot;username&quot;: &quot;alex&quot;,&#10;    &quot;amount&quot;: &quot;12&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/bids" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjEzMjJ9.lKoJjdsF50VaSZQXsKk1h_03LAZT6MDbwZX8qco8Vp4" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;   &quot;username&quot;: &quot;alex&quot;,&#10;    &quot;amount&quot;: &quot;12&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/1/bids" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjEzMjJ9.lKoJjdsF50VaSZQXsKk1h_03LAZT6MDbwZX8qco8Vp4" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;   &quot;username&quot;: &quot;alex&quot;,&#10;    &quot;amount&quot;: &quot;12&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/books/bids" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjEzMjJ9.lKoJjdsF50VaSZQXsKk1h_03LAZT6MDbwZX8qco8Vp4" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3000/auth" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;username&quot;: &quot;alex&quot;,&#10;  &quot;password&quot;: &quot;pass123&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3000/books/1/bids" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjExOTZ9.XVRLQ_OT8mppcDN9cGNXzXaIyWv1n9374-qKHYrmSQQ" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;username&quot;: &quot;alex&quot;,&#10;  &quot;amount&quot;: &quot;5&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3000/books" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjExOTZ9.XVRLQ_OT8mppcDN9cGNXzXaIyWv1n9374-qKHYrmSQQ" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;author&quot;: &quot;Chinua Achebe&quot;,&#10;  &quot;country&quot;: &quot;UK&quot;,&#10;  &quot;pages&quot;: 209,&#10;  &quot;title&quot;: &quot;The Big Brother&quot;,&#10;  &quot;year&quot;: 1958&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3000/books" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;author&quot;: &quot;Chinua Achebe&quot;,&#10;  &quot;country&quot;: &quot;UK&quot;,&#10;  &quot;pages&quot;: 209,&#10;  &quot;title&quot;: &quot;The Big Brother&quot;,&#10;  &quot;year&quot;: 1958&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3000/books/2" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjExODB9.9UvC7sV7LXsJTs9lOjNHZg55TLO7Z33bA37p0IIAP0E" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;Harry Potter&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3000/books/1" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;Harry Potter&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3000/books/2" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjExMjl9.MkvIWFzWckXuXVC6XEpvZZTPxL3ytwr-loSKtEI5B8M" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;Harry Potter&quot;,&#10;  &quot;pages&quot;: &quot;20&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3000/books/2" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjExMDh9.QJEqzsmhPCm1dOZYs5HFU-v2EE3nkZXU8gjSU3HoK4E" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;Harry Potter&quot;,&#10;  &quot;pages&quot;: &quot;20&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/auth" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjExMDh9.QJEqzsmhPCm1dOZYs5HFU-v2EE3nkZXU8gjSU3HoK4E" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="DELETE" />
+          <option name="urlBase" value="http://localhost:3000/books/3" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjEwNjB9.3KPJtqq3wFmc6UcwW3snHPnZbqqHxe9oPSZl53wTLk0" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="DELETE" />
+          <option name="urlBase" value="http://localhost:3000/books/3" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="DELETE" />
+          <option name="urlBase" value="http://localhost:3000/books/id" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjEwMzJ9.N9RGIHJHTEV71MWHORPM8c_stMLjjJn4tm_JhSsfWuc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="DELETE" />
+          <option name="urlBase" value="http://localhost:3000/books/1/bids" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="id" />
+                <option name="value" value="3" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="DELETE" />
+          <option name="urlBase" value="http://localhost:3000/books/1/bids" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjEwMTZ9.yjbaDEXrOXws7PhypjZbhKCU3bACRiZiNfFejsRvYEU" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="id" />
+                <option name="value" value="3" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="DELETE" />
+          <option name="urlBase" value="http://localhost:3000/auth" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjEwMDZ9.-BO_apKufJacYuENG6N0Ncjsc1IuGG6vjDZ5dsGl5X0" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="DELETE" />
+          <option name="urlBase" value="http://localhost:3000/auth" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer {{token}}" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="DELETE" />
+          <option name="urlBase" value="http://localhost:3000/books/id" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer {{token}}" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/auth" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer {{token}}" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/books/10012" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/books/1" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/books/100/bids" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/books/1/bids" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/books" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/books/" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="country" />
+                <option name="value" value="Romania" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/books/" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="country" />
+                <option name="value" value="Denmark" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/books/" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="author" />
+                <option name="value" value="Alexandru" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/books/" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="author" />
+                <option name="value" value="Hans Christian Andersen" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/books/" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="country" />
+                <option name="value" value="2077" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/books/" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="year" />
+                <option name="value" value="2077" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/books/" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="year" />
+                <option name="value" value="1979" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/bids" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer {{token}}" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;   &quot;username&quot;: &quot;alex&quot;,&#10;    &quot;amount&quot;: &quot;12&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3000/books/bids" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="Bearer {{token}}" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
           <option name="httpMethod" value="PUT" />
           <option name="urlBase" value="http://localhost:3000/books/id" />
           <option name="urlPath" value="" />
@@ -119,30 +868,6 @@
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
-          <option name="httpMethod" value="DELETE" />
-          <option name="urlBase" value="http://localhost:3000/books/1/bids" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="id" />
-                <option name="value" value="3" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
           <option name="httpMethod" value="POST" />
           <option name="urlBase" value="http://localhost:3000/books/1/bids" />
           <option name="urlPath" value="" />
@@ -156,52 +881,6 @@
           </option>
           <option name="haveTextToSend" value="true" />
           <option name="textToSend" value="{&#10;    &quot;username&quot;: &quot;Jason&quot;,&#10;    &quot;amount&quot;: &quot;5&quot;&#10;}" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:3000/books/1/bids" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:3000/books/1" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:3000/auth" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Content-Type" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="{&#10;  &quot;username&quot;: &quot;alex&quot;,&#10;  &quot;password&quot;: &quot;pass123&quot;&#10;}" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -300,30 +979,6 @@
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:3000/books/" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="year" />
-                <option name="value" value="1979" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
           <option name="httpMethod" value="POST" />
           <option name="urlBase" value="http://localhost:3000/users" />
           <option name="urlPath" value="" />
@@ -403,30 +1058,6 @@
             <list>
               <KeyValuePair>
                 <option name="key" value="author" />
-                <option name="value" value="Hans Christian Andersen" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:3000/books/" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="author" />
                 <option name="value" value="HansChristianAndersen" />
               </KeyValuePair>
             </list>
@@ -461,21 +1092,6 @@
         </RestClientRequest>
         <RestClientRequest>
           <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:3000/books" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
           <option name="urlBase" value="http://localhost:3000/books/" />
           <option name="urlPath" value="" />
           <option name="headers">
@@ -498,219 +1114,6 @@
           <option name="textToSend" value="" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:3000/books/" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="author" />
-                <option name="value" value="J.K.Rownling" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:3000/books/" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Content-Type" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="country" />
-                <option name="value" value="Denmark" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:3000/books/sort" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Content-Type" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="country" />
-                <option name="value" value="Denmark" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:3000/sort" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Content-Type" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="country" />
-                <option name="value" value="Denmark" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:3000/books/sort" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Content-Type" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:3000/books/sort/" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Content-Type" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="country" />
-                <option name="value" value="Denmark" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:3000/books/10" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:3000/users" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="{&#10;  &quot;username&quot;: &quot;alex&quot;,&#10;  &quot;password&quot;: &quot;pass123&quot;&#10;}" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:3000/users" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="{&#10;    &quot;username&quot;: &quot;Nick&quot;,&#10;    &quot;password&quot;: &quot;pistol&quot;&#10;}" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:3000/users" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="{&#10;    &quot;email&quot;: &quot;eve.holt@reqres.in&quot;,&#10;    &quot;password&quot;: &quot;pistol&quot;&#10;}" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:3000/1" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
       </list>
     </option>
   </component>
@@ -726,19 +1129,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="requests#11 (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/rest/requests.rest" index="11" runType="Run single request">
+    <configuration name="getCalls#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/rest/getCalls.rest" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="requests#13" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/rest/requests.rest" index="13" runType="Run single request">
+    <configuration name="getCalls#15" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/rest/getCalls.rest" index="15" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="requests#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/rest/requests.rest" index="2" runType="Run single request">
+    <configuration name="getCalls#16" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/rest/getCalls.rest" index="16" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="requests#5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/rest/requests.rest" index="5" runType="Run single request">
+    <configuration name="getCalls#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/rest/getCalls.rest" index="2" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="requests#6" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/rest/requests.rest" index="6" runType="Run single request">
+    <configuration name="getCalls#4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/src/rest/getCalls.rest" index="4" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="DEV" type="js.build_tools.npm">
@@ -753,11 +1156,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.requests#2" />
-        <item itemvalue="HTTP Request.requests#5" />
-        <item itemvalue="HTTP Request.requests#6" />
-        <item itemvalue="HTTP Request.requests#11 (1)" />
-        <item itemvalue="HTTP Request.requests#13" />
+        <item itemvalue="HTTP Request.getCalls#16" />
+        <item itemvalue="HTTP Request.getCalls#15" />
+        <item itemvalue="HTTP Request.getCalls#4" />
+        <item itemvalue="HTTP Request.getCalls#2" />
+        <item itemvalue="HTTP Request.getCalls#1" />
       </list>
     </recent_temporary>
   </component>
@@ -794,7 +1197,7 @@
       <workItem from="1602411881693" duration="34932000" />
       <workItem from="1602944401249" duration="21805000" />
       <workItem from="1603354018663" duration="1213000" />
-      <workItem from="1603477713219" duration="78742000" />
+      <workItem from="1603477713219" duration="89744000" />
     </task>
     <task id="LOCAL-00001" summary="Added nodemon mac compat">
       <created>1599571031310</created>
@@ -985,7 +1388,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603969137705</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Added .md documentation, code sequence">
+      <created>1603972448302</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1603972448302</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1004,7 +1414,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implemented other routers" />
     <MESSAGE value="Finished tokens and encryption" />
     <MESSAGE value="Linked front-end with backend" />
     <MESSAGE value="Fixed auction.html" />
@@ -1029,7 +1438,8 @@
     <MESSAGE value="fixed small bugs in rest files" />
     <MESSAGE value="small bug in rest calls" />
     <MESSAGE value="Added .md documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added .md documentation" />
+    <MESSAGE value="Added .md documentation, code sequence" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added .md documentation, code sequence" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603959833588">
@@ -1044,38 +1454,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="83" key="#dev/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1600774824256" />
-    <state x="312" y="0" width="926" height="837" key="CommitChangelistDialog2" timestamp="1603969137154">
+    <state x="312" y="0" width="926" height="837" key="CommitChangelistDialog2" timestamp="1603972447702">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="312" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1603969137154" />
+    <state x="312" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1603972447702" />
     <state x="2395" y="80" width="926" height="837" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603915918033" />
     <state x="2606" y="211" key="FileChooserDialogImpl" timestamp="1602405864289">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1602346852726" />
     <state x="2606" y="211" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602405864289" />
-    <state width="1493" height="118" key="GridCell.Tab.0.bottom" timestamp="1603960305998">
+    <state width="1493" height="243" key="GridCell.Tab.0.bottom" timestamp="1604061398477">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="118" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1603960305998" />
+    <state width="1493" height="243" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1604061398477" />
     <state width="1877" height="164" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603908588508" />
     <state width="1638" height="254" key="GridCell.Tab.0.bottom/0.23.1680.949@0.23.1680.949" timestamp="1599573047842" />
-    <state width="1493" height="118" key="GridCell.Tab.0.center" timestamp="1603960305998">
+    <state width="1493" height="243" key="GridCell.Tab.0.center" timestamp="1604061398477">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="118" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1603960305998" />
+    <state width="1493" height="243" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1604061398477" />
     <state width="1877" height="164" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603908588508" />
     <state width="1638" height="254" key="GridCell.Tab.0.center/0.23.1680.949@0.23.1680.949" timestamp="1599573047841" />
-    <state width="1493" height="118" key="GridCell.Tab.0.left" timestamp="1603960305998">
+    <state width="1493" height="243" key="GridCell.Tab.0.left" timestamp="1604061398477">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="118" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1603960305998" />
+    <state width="1493" height="243" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1604061398477" />
     <state width="1877" height="164" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603908588508" />
     <state width="1638" height="254" key="GridCell.Tab.0.left/0.23.1680.949@0.23.1680.949" timestamp="1599573047841" />
-    <state width="1493" height="118" key="GridCell.Tab.0.right" timestamp="1603960305998">
+    <state width="1493" height="243" key="GridCell.Tab.0.right" timestamp="1604061398477">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="118" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1603960305998" />
+    <state width="1493" height="243" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1604061398477" />
     <state width="1877" height="164" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603908588508" />
     <state width="1638" height="254" key="GridCell.Tab.0.right/0.23.1680.949@0.23.1680.949" timestamp="1599573047842" />
     <state x="472" y="31" key="RollbackChangesDialog" timestamp="1601396257899">
@@ -1087,10 +1497,10 @@
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1602151749374" />
     <state x="2266" y="72" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600612983673" />
-    <state x="402" y="186" key="Vcs.Push.Dialog.v2" timestamp="1603969151856">
+    <state x="402" y="186" key="Vcs.Push.Dialog.v2" timestamp="1603972450364">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="402" y="186" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1603969151856" />
+    <state x="402" y="186" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1603972450364" />
     <state x="2423" y="235" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603915919804" />
     <state x="440" y="237" key="Vcs.Push.Dialog.v2/0.23.1680.949@0.23.1680.949" timestamp="1599571047543" />
     <state x="2588" y="95" width="583" height="849" key="find.popup" timestamp="1603639956357">

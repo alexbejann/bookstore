@@ -1,52 +1,79 @@
-PUT http://localhost:3000/books/id
-Content-Type: application/json
-
-{
-    "title": "Harry Potter",
-    "pages": "20"
-}
-
-<> 2020-10-17T011657.404.json
-
-###
-
-DELETE http://localhost:3000/books/bids?id=3
+GET http://localhost:3000/books/10012
 Accept: application/json
 
-<> 2020-10-03T111107.500.json
-
-###
-
-DELETE http://localhost:3000/books/1/bids?id=3
-Accept: application/json
-
-<> 2020-10-03T110719.500.json
-
-###
-
-POST http://localhost:3000/books/1/bids
-Content-Type: application/json
-
-{
-    "username": "Jason",
-    "amount": "5"
-}
-
-<> 2020-09-29T105710.201.json
-
-###
-
-GET http://localhost:3000/books/1/bids
-Accept: application/json
-
-<> 2020-09-29T105648.200.json
+<> 2020-10-30T024002.404.json
 
 ###
 
 GET http://localhost:3000/books/1
 Accept: application/json
 
-<> 2020-09-27T013112.200.json
+<> 2020-10-30T023957.200.json
+
+###
+
+GET http://localhost:3000/books/10012
+Accept: application/json
+
+###
+
+GET http://localhost:3000/books/bids
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjEzMjJ9.lKoJjdsF50VaSZQXsKk1h_03LAZT6MDbwZX8qco8Vp4
+
+{
+   "username": "alex",
+    "amount": "12"
+}
+
+<> 2020-10-30T023638.200.json
+
+###
+
+GET http://localhost:3000/bids
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjEzMjJ9.lKoJjdsF50VaSZQXsKk1h_03LAZT6MDbwZX8qco8Vp4
+
+{
+   "username": "alex",
+    "amount": "12"
+}
+
+<> 2020-10-30T023616.404.json
+
+###
+
+GET http://localhost:3000/1/bids
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjEzMjJ9.lKoJjdsF50VaSZQXsKk1h_03LAZT6MDbwZX8qco8Vp4
+
+{
+   "username": "alex",
+    "amount": "12"
+}
+
+<> 2020-10-30T023557.404.json
+
+###
+
+GET http://localhost:3000/bids
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjEzMjJ9.lKoJjdsF50VaSZQXsKk1h_03LAZT6MDbwZX8qco8Vp4
+
+{
+   "username": "alex",
+    "amount": "12"
+}
+
+<> 2020-10-30T023539.404.json
+
+###
+
+GET http://localhost:3000/books/bids
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjEzMjJ9.lKoJjdsF50VaSZQXsKk1h_03LAZT6MDbwZX8qco8Vp4
+
+<> 2020-10-30T023527.200.json
 
 ###
 
@@ -58,408 +85,52 @@ Content-Type: application/json
   "password": "pass123"
 }
 
-<> 2020-09-26T023527.200.json
-
-###
-
-GET http://localhost:3000/auth
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDA3ODc0Mzh9.OwU-OGI-Z9pzEWjecylZ01b7Cyd3zhRG-Sdo2TW8PQI
-
-<> 2020-09-22T061042.200.json
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-<> 2020-09-22T061038.200.json
-
-###
-
-GET http://localhost:3000/auth
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDA3ODYwNzN9.brg2Ud0QRloygb6_Y_HWA0ltQDr6-_5fwjIglpkVbT4
-
-<> 2020-09-22T054757.200.json
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-<> 2020-09-22T054753.200.json
-
-###
-
-GET http://localhost:3000/auth
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDA3ODYwNDR9.HMyTwEsxJ95FaNlpFA24cd_NVjsrVDs9DPKhZ2hbNvg
-
-<> 2020-09-22T054728.500.json
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-<> 2020-09-22T054724.200.json
-
-###
-
-GET http://localhost:3000/auth
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDA3ODYwMDN9.Cf1vgRVjcGTr8QHd1_cRTcR9S_D4F4aibGDjTn-lRQk
-
-<> 2020-09-22T054649.500.json
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-<> 2020-09-22T054643.200.json
-
-###
-
-GET http://localhost:3000/auth
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDA3ODU0NjZ9.FpClGJMXd_OZxf_FQe3SVNYEwr2OabfwXxLuRR-y_6M
-
-<> 2020-09-22T054636.500.json
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-<> 2020-09-22T053746.200.json
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-<> 2020-09-22T042258.200.json
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-<> 2020-09-22T042244.200.json
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-<> 2020-09-22T041851.200.json
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-<> 2020-09-22T035803.200.json
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-<> 2020-09-22T035726.200.json
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-<> 2020-09-22T035530.200.json
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-<> 2020-09-22T035506.200.json
-
-###
-
-POST http://localhost:3000/auth
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "pass123"
-}
-
-<> 2020-09-22T035254.200.json
+<> 2020-10-30T023522.200.json
 
 ###
 
 POST http://localhost:3000/books/1/bids
 Content-Type: application/json
-
-{
-    "username": "Jason",
-    "amount": "5"
-}
-
-<> 2020-09-22T032634.201.json
-
-###
-
-GET http://localhost:3000/books/?year=1979
-Accept: application/json
-
-<> 2020-09-22T030858.200.json
-
-###
-
-DELETE http://localhost:3000/books/1/bids?id=3
-Accept: application/json
-
-<> 2020-09-15T053710.200.json
-
-###
-
-DELETE http://localhost:3000/books/1/bids?id=3
-Accept: application/json
-
-<> 2020-09-15T053608.200.json
-
-###
-
-DELETE http://localhost:3000/books/1/bids?id=3
-Accept: application/json
-
-<> 2020-09-15T053304.201.json
-
-###
-
-DELETE http://localhost:3000/books/1/bids?id=3
-Accept: application/json
-
-<> 2020-09-15T052911.201.json
-
-###
-
-POST http://localhost:3000/books/1/bids
-Content-Type: application/json
-
-{
-    "username": "Jason",
-    "amount": "5"
-}
-
-<> 2020-09-15T051749.201.json
-
-###
-
-POST http://localhost:3000/users
-Content-Type: application/json
-
-{
-    "username": "Nick",
-    "password": "pistol"
-}
-
-<> 2020-09-15T051730.201.json
-
-###
-
-POST http://localhost:3000/users
-Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjExOTZ9.XVRLQ_OT8mppcDN9cGNXzXaIyWv1n9374-qKHYrmSQQ
 
 {
   "username": "alex",
-  "password": "pass123"
+  "amount": "5"
 }
 
-<> 2020-09-15T051726.400.json
+<> 2020-10-30T023431.201.json
 
 ###
 
-POST http://localhost:3000/auth
+POST http://localhost:3000/books
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjExOTZ9.XVRLQ_OT8mppcDN9cGNXzXaIyWv1n9374-qKHYrmSQQ
 
 {
-  "username": "Nick",
-  "password": "pass123"
+  "author": "Chinua Achebe",
+  "country": "UK",
+  "pages": 209,
+  "title": "The Big Brother",
+  "year": 1958
 }
 
-<> 2020-09-15T051721.404.json
+<> 2020-10-30T023347.409.json
+
+###
+
+POST http://localhost:3000/books
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjExOTZ9.XVRLQ_OT8mppcDN9cGNXzXaIyWv1n9374-qKHYrmSQQ
+
+{
+  "author": "Chinua Achebe",
+  "country": "UK",
+  "pages": 209,
+  "title": "The Big Brother",
+  "year": 1958
+}
+
+<> 2020-10-30T023333.201.json
 
 ###
 
@@ -471,33 +142,382 @@ Content-Type: application/json
   "password": "pass123"
 }
 
-<> 2020-09-15T051716.200.json
+<> 2020-10-30T023316.200.json
 
 ###
 
-POST http://localhost:3000/books/1/bids
-Content-Type: application/x-www-form-urlencoded
+POST http://localhost:3000/books
+Content-Type: application/json
 
 {
-    "username": "Jason",
-    "amount": "5"
+  "author": "Chinua Achebe",
+  "country": "UK",
+  "pages": 209,
+  "title": "The Big Brother",
+  "year": 1958
 }
 
-<> 2020-09-15T051523.201.json
+<> 2020-10-30T023313.500.json
 
 ###
 
-GET http://localhost:3000/books/?author=Hans Christian Andersen
-Accept: application/json
+PUT http://localhost:3000/books/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjExODB9.9UvC7sV7LXsJTs9lOjNHZg55TLO7Z33bA37p0IIAP0E
 
-<> 2020-09-15T050954.200.json
+{
+  "title": "Harry Potter"
+}
+
+<> 2020-10-30T023304.500.json
 
 ###
 
-GET http://localhost:3000/books/?author=HansChristianAndersen
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-10-30T023300.200.json
+
+###
+
+PUT http://localhost:3000/books/1
+Content-Type: application/json
+
+{
+  "title": "Harry Potter"
+}
+
+<> 2020-10-30T023255.500.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-10-30T023229.200.json
+
+###
+
+PUT http://localhost:3000/books/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjExMjl9.MkvIWFzWckXuXVC6XEpvZZTPxL3ytwr-loSKtEI5B8M
+
+{
+  "title": "Harry Potter",
+  "pages": "20"
+}
+
+<> 2020-10-30T023212.500.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-10-30T023209.200.json
+
+###
+
+PUT http://localhost:3000/books/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjExMDh9.QJEqzsmhPCm1dOZYs5HFU-v2EE3nkZXU8gjSU3HoK4E
+
+{
+  "title": "Harry Potter",
+  "pages": "20"
+}
+
+<> 2020-10-30T023204.500.json
+
+###
+
+GET http://localhost:3000/auth
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjExMDh9.QJEqzsmhPCm1dOZYs5HFU-v2EE3nkZXU8gjSU3HoK4E
+
+<> 2020-10-30T023152.404.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-10-30T023148.200.json
+
+###
+
+DELETE http://localhost:3000/books/3
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjEwNjB9.3KPJtqq3wFmc6UcwW3snHPnZbqqHxe9oPSZl53wTLk0
+
+<> 2020-10-30T023108.200.json
+
+###
+
+DELETE http://localhost:3000/books/3
 Accept: application/json
 
-<> 2020-09-15T050903.200.json
+<> 2020-10-30T023105.500.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-10-30T023100.200.json
+
+###
+
+DELETE http://localhost:3000/books/id
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjEwMzJ9.N9RGIHJHTEV71MWHORPM8c_stMLjjJn4tm_JhSsfWuc
+
+<> 2020-10-30T023044.404.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-10-30T023032.200.json
+
+###
+
+DELETE http://localhost:3000/books/1/bids?id=3
+Accept: application/json
+
+<> 2020-10-30T023026.500.json
+
+###
+
+DELETE http://localhost:3000/books/1/bids?id=3
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjEwMTZ9.yjbaDEXrOXws7PhypjZbhKCU3bACRiZiNfFejsRvYEU
+
+<> 2020-10-30T023020.200.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-10-30T023016.200.json
+
+###
+
+DELETE http://localhost:3000/auth
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsZXgiLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2MDQwNjEwMDZ9.-BO_apKufJacYuENG6N0Ncjsc1IuGG6vjDZ5dsGl5X0
+
+<> 2020-10-30T023011.200.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-10-30T023006.200.json
+
+###
+
+DELETE http://localhost:3000/auth
+Accept: application/json
+Authorization: Bearer {{token}}
+
+<> 2020-10-30T022832.500.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-10-30T022829.200.json
+
+###
+
+DELETE http://localhost:3000/auth
+Accept: application/json
+Authorization: Bearer {{token}}
+
+<> 2020-10-30T022821.500.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-10-30T022819.200.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-10-30T022713.200.json
+
+###
+
+DELETE http://localhost:3000/auth
+Accept: application/json
+Authorization: Bearer {{token}}
+
+<> 2020-10-30T022704.500.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-10-30T022700.200.json
+
+###
+
+DELETE http://localhost:3000/auth
+Accept: application/json
+Authorization: Bearer {{token}}
+
+<> 2020-10-30T022650.500.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-10-30T022645.200.json
+
+###
+
+DELETE http://localhost:3000/books/id
+Accept: application/json
+Authorization: Bearer {{token}}
+
+<> 2020-10-30T022521.500.json
+
+###
+
+DELETE http://localhost:3000/books/1/bids?id=3
+Accept: application/json
+
+<> 2020-10-30T022517.500.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-10-30T022502.200.json
+
+###
+
+GET http://localhost:3000/auth
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+<> 2020-10-30T022455.404.json
+
+###
+
+DELETE http://localhost:3000/auth
+Accept: application/json
+Authorization: Bearer {{token}}
+
+<> 2020-10-30T022442.500.json
+
+###
+
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "pass123"
+}
+
+<> 2020-10-30T022434.200.json
+
+###
+
+GET http://localhost:3000/books/10012
+Accept: application/json
+
+<> 2020-10-30T022249.404.json
+
+###
+
+GET http://localhost:3000/books/1
+Accept: application/json
+
+<> 2020-10-30T022245.200.json
 
 ###
 
