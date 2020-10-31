@@ -2,7 +2,10 @@
     font-family: arial;
     font-size: inherit;
 }
-
+.search-container
+{
+    margin-right: 25px;
+}
 html {
     position: relative;
 }

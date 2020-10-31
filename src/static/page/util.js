@@ -168,34 +168,4 @@ export function loadNavigation(active)
                             active === 'login' ? 'active' : '' ));
         login.href = 'login.html';
     }
-    createSearch(nav)
-}
-
-const createSearch = (nav)=>{
-    // create containers
-    const container = nav.appendChild(newElem('div','','search-container'));
-    const form = container.appendChild(newElem('form','',''));
-    form.action = '/';
-    //search box
-    const searchbox = document.createElement('input');
-    searchbox.type = 'text';
-    searchbox.placeholder = 'Search..';
-    searchbox.name = 'search';
-    searchbox.setAttribute('list','dropdown')
-    //button
-    const button = document.createElement('button');
-    button.type = 'submit';
-    //icon
-    const icon = document.createElement('i')
-    icon.className = 'fa fa-search';
-    //dropdown
-    const datalist = document.createElement('datalist')
-    datalist.id = 'dropdown'
-    datalist.appendChild(newElem('option','Alex','option'))
-    datalist.appendChild(newElem('option','Alex2','option'))
-    //append children
-    button.appendChild(icon)
-    form.appendChild(searchbox)
-    form.appendChild(datalist)
-    form.appendChild(button)
 }

@@ -1,19 +1,29 @@
 // import utilities from util.js
-import { sendJSON, loadNavigation, newElement } from './util.js';
+import {sendJSON, loadNavigation, newElement, newElem} from './util.js';
 
+let books = [];
 //create books
 function createBooks(response)
 {
     const container = document.getElementById('book-container');
+    container.innerHTML = '';
+    for (let index = 0; index < response.length; index++)
+    {
+        //create books and append to parent
+        container.appendChild(createBook(response[index]));
+    }
+}
+
+//create filters
+function createFilters(books)
+{
     //used for filtering
     let authors = [];
     let years = [];
     let countries = [];
-    for (let index = 0; index < response.length; index++)
+    for (let i = 0; i < books.length; i++)
     {
-        let book = response[index];
-        //create books and append to parent
-        container.appendChild(createBook(book));
+        let book = books[i];
         //add filter values
         if (!authors.includes(book.author))
         {
@@ -96,11 +106,15 @@ window.onload = (event) =>{
         // if err is undefined, the send operation was a success
         if (!err) {
             createBooks(response);
+            createFilters(response);
+            books = response;
         } else {
             alert(err);
             console.error(err);
         }
-    })
+    });
+
+    createSearch();
 };
 
 
@@ -120,4 +134,30 @@ function createBook(book)
     bidsContainer.appendChild(newElement('span', `${book.price}`, 'auction_bid_price',''));
     bidsContainer.appendChild(newElement('span',`${book.time}`,'auction_bid_time',''));
     return nTag;
+}
+
+const createSearch = () => {
+    const nav = document.querySelector('nav');
+    // create container
+    const container = nav.appendChild(newElem('div','','search-container'));
+    //search box
+    const searchBox = document.createElement('input');
+    searchBox.type = 'text';
+    searchBox.placeholder = 'Search..';
+    searchBox.id = 'searchBox'
+    searchBox.name = 'searchBox';
+    // add on key up listener
+    searchBox.addEventListener('keyup', (event) => {
+        //get input value and to lowercase
+        const searchString = event.target.value.toLowerCase();
+        //filter books
+        const filteredBooks = books.filter((book) => {
+            return (
+                book.title.toLowerCase().includes(searchString)
+            );
+        });
+        //create books with filtered books
+        createBooks(filteredBooks)
+    })
+    container.appendChild(searchBox)
 }

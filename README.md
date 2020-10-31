@@ -3,7 +3,7 @@
 -  **Cosmin George Mucalau**
 
 ## Books Auction Store
-Do `npm install` to install dependencies and to run project do `npm run dev`. This command will start the server to listen on `http://localhost:3000
+Do `npm install` or `pnpm install`([pnpm](https://www.npmjs.com/package/pnpm), to install run `npm i pnpm`) to install dependencies and to run project do `npm run dev`. This command will start the server to listen on `http://localhost:3000
 `.
 ## Admin user credentials
 - username: __alex__
