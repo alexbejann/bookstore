@@ -3,7 +3,7 @@
 -  **Cosmin George Mucalau**
 
 ## Get Started
-To run project do `npm run dev`. This command will start the server to listen on `http://localhost:3000
+Do `npm install` to install dependencies and to run project do `npm run dev`. This command will start the server to listen on `http://localhost:3000
 `.
 
 ## Project structure, backend only

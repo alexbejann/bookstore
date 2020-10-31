@@ -5,7 +5,7 @@ export function sendJSON({ method, url, body }, callback) {
         if (xhr.status >= 200 && xhr.status < 300) {
             callback(undefined, JSON.parse(xhr.responseText))
         } else {
-            callback(new Error(xhr.statusText))
+            callback(new Error(xhr.responseText))
         }
     })
     xhr.open(method, url)

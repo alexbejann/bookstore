@@ -3,7 +3,7 @@
 -  **Cosmin George Mucalau**
 
 ## Books Auction Store
-To run project do `npm run dev`. This command will start the server to listen on `http://localhost:3000
+Do `npm install` to install dependencies and to run project do `npm run dev`. This command will start the server to listen on `http://localhost:3000
 `.
 ## Admin user credentials
 - username: __alex__

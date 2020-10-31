@@ -23,7 +23,7 @@ loginButton.addEventListener('click', event => {
             //redirect user to home page
             window.location.replace('./index.html');
         } else {
-            alert("Username or Password are incorrect!")
+            alert(err)
             console.error(err);
         }
     })
