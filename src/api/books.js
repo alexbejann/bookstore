@@ -55,15 +55,15 @@ router.get('/', (req, res, next) => {
     let country = req.query.country;
     let author = req.query.author;
     let year = req.query.year;
-    if (country != null)
+    if (country)
     {
         let result = books.filter(element => element.country === country);
-
+        console.log(country,result)
         res
             .status(StatusCodes.OK)
             .json(result);
     }
-    else if(author != null)
+    else if(author)
     {
         let result = books.filter(element => element.author === author);
         console.log(author.trim());
@@ -71,8 +71,9 @@ router.get('/', (req, res, next) => {
             .status(StatusCodes.OK)
             .json(result);
     }
-    else if (year != null)
+    else if (year)
     {
+        console.log(year,books)
         let result = books.filter(element => element.year === year);
 
         res

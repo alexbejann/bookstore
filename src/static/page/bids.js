@@ -21,10 +21,9 @@ window.onload = (event) =>{
 
 //create bids table
 const createTable = (response)=>{
-    for (let index=0; index < response.length; index++)
-    {
-        createBids(response[index]);
-    }
+    response.forEach(item=>{
+        createBids(item);
+    });
     if (response.length === 0)
     {
         const aucContainer =document.getElementById('bids_container');

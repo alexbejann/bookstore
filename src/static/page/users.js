@@ -17,10 +17,9 @@ window.onload = (event) =>{
 
 //create users table
 const createUsersTable= (response) =>{
-    for (let index=0; index < response.length; index++)
-    {
-        createUserElement(response[index]);
-    }
+    response.forEach(item=>{
+        createUserElement(item);
+    });
 }
 
 //create user row

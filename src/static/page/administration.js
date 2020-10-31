@@ -21,10 +21,9 @@ window.onload = (event) =>{
 //create auction
 const createAuctionTable = (response) =>{
 
-    for (let index=0; index < response.length; index++)
-    {
-        createAuctionElement(response[index]);
-    }
+    response.forEach((item)=>{
+        createAuctionElement(item)
+    });
     //create add book form
     createForm();
     //validate form

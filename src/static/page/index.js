@@ -21,9 +21,7 @@ function createFilters(books)
     let authors = [];
     let years = [];
     let countries = [];
-    for (let i = 0; i < books.length; i++)
-    {
-        let book = books[i];
+    books.forEach(book =>{
         //add filter values
         if (!authors.includes(book.author))
         {
@@ -37,20 +35,19 @@ function createFilters(books)
         {
             countries.push(book.country)
         }
-    }
+    })
     // create filters
-    for (let i = 0; i < authors.length; i++)
-    {
-        createFilter('author',authors[i], 'author-cont')
-    }
-    for (let i = 0; i < years.length; i++)
-    {
-        createFilter('year',years[i], 'year-cont')
-    }
-    for (let i = 0; i < countries.length; i++)
-    {
-        createFilter('country',countries[i], 'country-cont')
-    }
+    authors.forEach(author=>{
+        createFilter('author',author, 'author-cont')
+    })
+
+    years.forEach(year=>{
+        createFilter('year',year, 'year-cont')
+    })
+
+    countries.forEach(country =>{
+        createFilter('country',country, 'country-cont')
+    })
 }
 
 //create filter
@@ -67,24 +64,30 @@ function createFilter(category,value, id)
     checkbox.id = `${value}`
     // add checkbox checked listener
     checkbox.addEventListener('click', event =>{
-
         const bookContainer = document.getElementById('book-container');
         //clear children
         bookContainer.innerHTML = '';
 
-        //do filter request
-        sendJSON({ method: 'GET', url: `/books/?${category}=${value}` }, (err, response) => {
-            // if err is undefined, the send operation was a success
-            if (!err) {
-                //recreate all books
-                for (let i = 0; i < response.length; i++) {
-                    bookContainer.appendChild(createBook(response[i]));
+        if (checkbox.checked)
+        {
+            //do filter request
+            sendJSON({ method: 'GET', url: `/books/?${category}=${value}` }, (err, response) => {
+                // if err is undefined, the send operation was a success
+                if (!err) {
+                    //recreate all books
+                    response.forEach(book=>{
+                        bookContainer.appendChild(createBook(book));
+                    })
+                } else {
+                    alert(err)
+                    console.error(err);
                 }
-            } else {
-                alert(err)
-               console.error(err);
-            }
-        })
+            })
+        }
+        else
+        {
+            location.reload();
+        }
     })
     //create label for input
     const label = document.createElement('label')
