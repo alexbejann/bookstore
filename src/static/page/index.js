@@ -60,10 +60,11 @@ function createFilter(category,value, id)
 
     //create input/checkbox
     const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox'
+    checkbox.type = 'radio'
     checkbox.id = `${value}`
+    checkbox.name='rad'
     // add checkbox checked listener
-    checkbox.addEventListener('click', event =>{
+    checkbox.addEventListener('change', event =>{
         const bookContainer = document.getElementById('book-container');
         //clear children
         bookContainer.innerHTML = '';
